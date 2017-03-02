@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+        ">
+
+	<context:component-scan base-package="com.yc.bean,com.yc.dao,com.yc.biz,com.yc.web.controller" />
+	
+	<!-- 启用 aop 代理机制 -->
+	<aop:aspectj-autoproxy />
+	
+	<!-- 数据库 链接 -->
+	<context:property-placeholder location="classpath:mysql.properties" />
+
+	<!-- 数据库连接池 C3P0 需要引入包 数据库连接池 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<!-- 取得SqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+
+		<!-- 主要用来配置mybatis 中的 configuration 中的setting的配置 -->
+		<property name="configurationProperties">
+			<props>
+				<prop key="logImpl">LOG4J</prop>
+			</props>
+		</property>
+
+		<!-- 别名包的位置 -->
+		<property name="typeAliasesPackage" value="com.yc.bean"></property>
+
+		<!-- 配置mapper的映射文件 -->
+		<property name="mapperLocations" value="classpath:com/yc/mapper/*.xml"></property>
+
+	</bean>
+	
+	<!-- 事务管理器 mybatis使用标准的jdbc框架 -->
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 启用注解框架 注解解析 -->
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<!-- 由spring提供的失误增强 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager" >
+		<!-- spring只支持方法级的增强，所以这里配置哪些方法要加入事物增强 -->
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="retrieve*" read-only="true" />
+			<tx:method name="*" read-only="false" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- 切面配置 -->
+	<aop:config>
+		<aop:pointcut id="abc" expression="execution(* com.yc.biz.impl.*.*(..) )"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="abc"/>
+	</aop:config>	
+	
+	
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+

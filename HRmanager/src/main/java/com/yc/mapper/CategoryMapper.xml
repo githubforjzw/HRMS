@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- sql映射文件 将java的类和数据库的表通过sql映射文件关联起来 -->
+
+
+<!-- namespace 表示访问这个mapper文件的路径 一般与真实路径相同 -->
+
+<mapper namespace="com.yc.mapper.CategoryMapper">
+
+	<!-- 二级缓存 -->
+	<cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true"></cache>
+	
+	<!-- redis缓存
+	<cache type="com.yc.dao.redis.cache.RedisCache"></cache>  -->
+	
+	<select id="findAll"  resultType="Category" parameterType="Category" >
+		select * from category
+		where 1=1
+		<choose>
+			<when test="cid!=null">
+				and cid = #{cid}
+			</when>
+			<when test="cname!=null">
+				and cname = #{cname}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<delete id="delete1"  parameterType="Category"  >
+		delete from category where cid = #{cid}
+	</delete>
+	
+	<!-- 插入的同时 获取最新的id  mySql -->
+	<insert id="add1" parameterType="Category" useGeneratedKeys="true" keyProperty="cid">
+		insert into category(cname )
+		values( #{cname} );
+	</insert>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

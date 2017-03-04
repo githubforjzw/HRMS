@@ -1,0 +1,267 @@
+<table id="show_foods_info" data-option="fit:true"></table>
+
+<div id="goods_manager_search" style="height:28px" >
+	<a href="javascript:addFoodsInfo()" class="easyui-linkbutton" data-option="iconCls:'icon-add',plain:true" style="float:left">添加</a>
+	<div class="datagrid-btn-separator"></div>
+	<a href="javascript:updateFoodsInfo()" class="easyui-linkbutton" data-option="iconCls:'icon-add',plain:true" style="float:left">修改</a>
+	<div class="datagrid-btn-separator"></div>
+	
+	<a href="javascript:delFoodsInfo()" class="easyui-linkbutton" data-option="iconCls:'icon-add',plain:true" style="float:left">删除</a>
+	<div class="datagrid-btn-separator"></div>
+	
+	<a href="javascript:updateStatus('up')" class="easyui-linkbutton" data-option="iconCls:'icon-add',plain:true" style="float:left">上架</a>
+	<div class="datagrid-btn-separator"></div>
+	<a href="javascript:updateStatus('down')" class="easyui-linkbutton" data-option="iconCls:'icon-add',plain:true" style="float:left">下架</a>
+	<div class="datagrid-btn-separator"></div>
+	
+	<label>商品名称</label><input type="text" name="gname" id="search_fname" >
+	<a href="javascript:foods_search()" class="easyui-linkbutton" data-option="iconCls:'icon-add',plain:true" >查询</a>
+	
+</div>
+
+<div id="show_foods_add_info" class="easyui-dialog" data-options="iconCls:'icon-add',resizable:true,modal:true,fit:true,closed:true">
+	<div style="width:440px;height:460px;margin:50px auto;border:4px solid #F93;border-radius:20px;	">
+		<br/><h1 style="width:150px;margin:10px auto;color:green ;font-size:20px">请填写商品信息</h1><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品编号:</span><input type="text" readonly="readonly" name="fid" id="fid"><br/><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品名称:</span><input type="text" name="fname" id="fname"><br/><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品原价:</span><input type="number" name="normprice" id="normprice"><br/><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品现价:</span><input type="number" name="realprice" id="realprice"><br/><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品描述:</span><input type="text" name="detail" id="detail"><br/><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品图片:</span><input type="file" name="fphoto" id="fphoto" onchange="previewMultipleImage(this,'showpic')"/>
+		<div id="showpic" style="width:100px;height:100px;border:4px solid #EDF4FF; margin:5px auto;"> 		</div>
+		<h1 style="width:50px;margin:10px auto;">
+			<input type="button" style="width:40px;height:30px " value="提交" onclick="addFoods()">
+		</h1>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+	//显示商品
+	$('#show_foods_info').datagrid({   
+	    url:'../resfood.action',
+	    fitColumns:true,
+	    loadMsg:'数据加载中...',
+	    queryParams:{op:'findFoodsInfoByPage'},
+	    pagination:true,//显示分页
+	    Striped:true,//斑马线
+	    nowrap:true,//超出自动截取
+	    rownumbers:true,//显示行数
+	    pageSize:5,//每页条数
+	    pageList:[5,10,20,30,50],
+	    sortName:'fid',//排序的列
+	    remoteSort:false,
+	    columns:[[
+			{field:'fids',title:'商品编号',width:100,align:'center',checkbox:true},
+	        {field:'fphoto',title:'商品图片',width:100,align:'center',formatter: function(value,row,index){
+	        	var picStr="";
+	        	if(value!=""){
+	        		picStr+="<img src='../"+value+"' width='100px' height='100px' />";
+	        	}else{
+	        		picStr+="<img src='../back/images/zanwu.jpg' width='100px' height='100px' />";
+	        	}
+	        	return picStr;
+	        	}
+	        },   
+	        {field:'fid',title:'商品编号',width:100,align:'center',sortable:true},   
+	        {field:'fname',title:'商品名称',width:100,align:'center'},   
+	        {field:'normprice',title:'商品原价',width:100,align:'center'},   
+	        {field:'realprice',title:'商品现价',width:100,align:'center'},   
+	        {field:'detail',title:'商品描述',width:100,align:'center'},
+	        {field:'status',title:'商品状态',width:100,align:'center'}
+	    ]],
+	    toolbar:"#goods_manager_search"
+
+	});
+	function clearAll(){
+		$("#fid").val("");
+		$("#fname").val("");
+		$("#normprice").val("");
+		$("#realprice").val("");
+		$("#detail").val("");
+		$("#showpic").html("");
+		var obj = document.getElementById('fphoto') ;  
+		obj.outerHTML=obj.outerHTML;
+	}
+	//添加
+	function addFoodsInfo(){
+		$('#show_foods_add_info').dialog({title:'添加商品信息',closed:false,iconCls:"icon-add"});
+		clearAll();
+		$("#showpic").html("<img id='img' src='../back/images/zanwu.jpg' style='float:left;' width='100' height='100'>");
+	}
+	
+	//上下架
+	function updateStatus(status){
+		var rows=$('#show_foods_info').datagrid("getChecked");
+		if(rows.length<=0){
+			$.messager.alert("温馨提示","请选择商品...","error");
+			return;
+		}else if(rows.length>1){
+			var id="";
+			var i=0;
+			for(;i<rows.length-1;i++){
+				id+=rows[i].fid+",";
+			}
+			id+=rows[i].fid;
+		}else{
+			var id=rows[0].fid;
+		}
+		
+		$.post('../resfood.action?op=updateStatus', {
+			fid :id,
+			status:status
+		}, function(date) {
+			if (date.code==1) {
+				$('#show_foods_info').datagrid('reload'); // reload the user data 
+			} else {
+				$.messager.show({ // show error message 
+					title : '失败提示框',
+					msg : date.errorMsg
+				});
+			}
+		}, 'json');
+	}
+	
+	//删除
+	function delFoodsInfo() {
+		var row = $('#show_foods_info').datagrid('getSelected');//单一
+		var rows = $('#show_foods_info').datagrid('getChecked');//多项
+		if(rows.length>1||rows.length<=0){
+			$.messager.alert("温馨提示","请选择一行您要删除数据...","error");
+		}else{
+			if (row) {
+				$.messager.confirm('Confirm','信息无价！确定要删除吗?', function(r) {
+					if (r) {
+						$.post('../resfood.action?op=delFoodsInfo', {
+							fid : row.fid
+						}, function(date) {
+							if (date.code==1) {
+								$('#show_foods_info').datagrid('reload'); // reload the user data 
+							} else {
+								$.messager.show({ // show error message 
+									title : '失败提示框',
+									msg : date.errorMsg
+								});
+							}
+						}, 'json');
+					}
+				});
+			}
+		}
+	}
+
+	//修改
+	function updateFoodsInfo() {
+		var rows = $('#show_foods_info').datagrid("getChecked");
+		clearAll();
+		if (rows.length > 1 || rows.length <= 0) {
+			$.messager.alert("温馨提示", "请选择一行数据进行修改...", "error");
+		} else {
+			rows = rows[0];
+			$("#show_foods_add_info").dialog({
+				title : '修改商品信息',
+				closed : false,
+				iconCls : "icon-edit"
+			});
+			$("#fid").val(rows.fid);
+			$("#fname").val(rows.fname);
+			$("#normprice").val(rows.normprice);
+			$("#realprice").val(rows.realprice);
+			$("#detail").val(rows.detail);
+			var str="";
+			if(rows.fphoto==""){
+				str="back/images/zanwu.jpg";
+			}else{
+				str=rows.fphoto;
+			}
+			$("#showpic").html("<img id='img' src=../"+str+" style='float:left;' width='100' height='100'>");
+		}
+	}
+
+	//查询
+	function foods_search() {
+		var fname = $.trim($("#search_fname").val());
+
+		$('#show_foods_info').datagrid({
+			url : '../resfood.action',
+			queryParams : {
+				op : 'foodsInfoSearch',
+				fname : fname
+			}
+		});
+	}
+	//添加  、修改商品
+	function addFoods() {
+		var fid = $.trim($("#fid").val());
+		var fname = $.trim($("#fname").val());
+		var normprice = $.trim($("#normprice").val());
+		var realprice = $.trim($("#realprice").val());
+		var detail = $.trim($("#detail").val());
+
+		if (fid == "") {
+			url = "../resfood.action?op=addFood";
+			data = {
+				fname : fname,
+				normprice : normprice,
+				realprice : realprice,
+				detail : detail
+			};
+		} else {
+			url = "../resfood.action?op=updateFood";
+			data = {
+				fid : fid,
+				fname : fname,
+				normprice : normprice,
+				realprice : realprice,
+				detail : detail
+			};
+		}
+
+		$.ajaxFileUpload({
+			url : url,
+			secureuri : false, /*使用HTTP协议 所以把这个禁用 */
+			fileElementId : "fphoto", //["pic","pic"] 你要上传的文件的 文本框ID
+			data : data,
+			dataType : "JSON",
+			success : function(data, status) {
+				data = $.trim(data);
+				if (data == "0") {
+					$.messager.alert('错误提示','操作失败！','error'); 
+				} else if (data == "1") {
+					clearAll();
+					$('#show_foods_add_info').dialog('close');
+					$('#show_foods_info').datagrid('reload');
+				} else {
+					$.messager.alert('错误提示','请检查数据！','error'); 
+				}
+			},
+			error : function(data, status, e) {
+				alert(e);
+			}
+		});
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

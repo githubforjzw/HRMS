@@ -1,0 +1,226 @@
+<table id="show_user_info" data-option="fit:true"></table>
+
+<div id="manager_user" style="height:28px" >
+	<a href="javascript:addUser()" class="easyui-linkbutton" data-option="iconCls:'icon-add',plain:true" style="float:left">添加</a>
+	<div class="datagrid-btn-separator"></div>
+	<a href="javascript:updateUserInfo()" class="easyui-linkbutton" data-option="iconCls:'icon-update',plain:true" style="float:left">修改</a>
+	<div class="datagrid-btn-separator"></div>
+	
+	<a href="javascript:delUserInfo()" class="easyui-linkbutton" data-option="iconCls:'icon-del',plain:true" style="float:left">删除</a>
+	<div class="datagrid-btn-separator"></div>
+	
+	<label>用户名:</label><input type="text" name="gname" id="search_uname" >
+	<a href="javascript:user_search()" class="easyui-linkbutton" data-option="iconCls:'icon-add',plain:true" >查询</a>
+	
+</div>
+
+<div id="show_add_user_info" class="easyui-dialog" data-options="iconCls:'icon-add',resizable:true,modal:true,fit:true,closed:true">
+	<div style="width:440px;height:460px;margin:50px auto;border:4px solid #F93;border-radius:20px;	">
+		<br/><h1 style="width:150px;margin:10px auto;color:green ;font-size:20px">请填写商品信息</h1><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品编号:</span><input type="text" readonly="readonly" name="fid" id="fid"><br/><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品名称:</span><input type="text" name="fname" id="fname"><br/><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品原价:</span><input type="number" name="normprice" id="normprice"><br/><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品现价:</span><input type="number" name="realprice" id="realprice"><br/><br/>
+		<span style="width:60px;padding-left:100px;display:inline-block;">商品描述:</span><input type="text" name="detail" id="detail"><br/><br/>
+		<h1 style="width:50px;margin:10px auto;">
+			<input type="button" style="width:40px;height:30px " value="提交" onclick="addFoods()">
+		</h1>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+	//显示商品
+	$('#show_user_info').datagrid({   
+	    url:'../resuser.action',
+	    fitColumns:true,
+	    loadMsg:'数据加载中...',
+	    queryParams:{op:'findUserInfoByPage'},
+	    pagination:true,//显示分页
+	    Striped:true,//斑马线
+	    nowrap:true,//超出自动截取
+	    rownumbers:true,//显示行数
+	    pageSize:10,//每页条数
+	    pageList:[10,20,30,50],
+	    sortName:'rank',//排序的列
+	    remoteSort:false,
+	    columns:[[
+			{field:'userids',title:'用户编号',width:100,align:'center',checkbox:true},
+	        {field:'userid',title:'用户编号',width:100,align:'center',sortable:true},   
+	        {field:'username',title:'用户名',width:100,align:'center'},   
+	        {field:'email',title:'邮箱地址',width:100,align:'center'},
+	        {field:'score',title:'积分',width:100,align:'center',sortable:true},
+	        {field:'rank',title:'积分排名',width:100,align:'center',sortable:true}
+	    ]],
+	    toolbar:"#manager_user"
+
+	});
+	
+	//清空
+	function clearAll(){
+		$("#fid").val("");
+		$("#fname").val("");
+		$("#normprice").val("");
+		$("#realprice").val("");
+		$("#detail").val("");
+		$("#showpic").html("");
+		var obj = document.getElementById('fphoto') ;  
+		obj.outerHTML=obj.outerHTML;
+	}
+	//添加
+	function addUser(){
+		$.messager.alert('温馨提示','该功能暂未开放！','info'); 
+		return;
+		$('#show_add_user_info').dialog({title:'添加商品信息',closed:false,iconCls:"icon-add"});
+		clearAll();
+	}
+	
+	//删除
+	function delUserInfo() {
+		$.messager.alert('温馨提示','该功能暂未开放！','info'); 
+		return;
+		
+		var row = $('#show_user_info').datagrid('getSelected');//单一
+		var rows = $('#show_user_info').datagrid('getChecked');//多项
+		if(rows.length>1||rows.length<=0){
+			$.messager.alert("温馨提示","请选择一行您要删除数据...","error");
+		}else{
+			if (row) {
+				$.messager.confirm('Confirm','信息无价！确定要删除吗?', function(r) {
+					if (r) {
+						$.post('../resuser.action?op=delUserInfo', {
+							fid : row.fid
+						}, function(date) {
+							if (date.code==1) {
+								$('#show_user_info').datagrid('reload'); // reload the user data 
+							} else {
+								$.messager.show({ // show error message 
+									title : '失败提示框',
+									msg : date.errorMsg
+								});
+							}
+						}, 'json');
+					}
+				});
+			}
+		}
+	}
+
+	//修改
+	function updateUserInfo() {
+		$.messager.alert('温馨提示','该功能暂未开放！','info'); 
+		return;
+		
+		var rows = $('#show_user_info').datagrid("getChecked");
+		clearAll();
+		if (rows.length > 1 || rows.length <= 0) {
+			$.messager.alert("温馨提示", "请选择一行数据进行修改...", "error");
+		} else {
+			rows = rows[0];
+			$("#show_add_user_info").dialog({
+				title : '修改商品信息',
+				closed : false,
+				iconCls : "icon-edit"
+			});
+			$("#fid").val(rows.fid);
+			$("#fname").val(rows.fname);
+			$("#normprice").val(rows.normprice);
+			$("#realprice").val(rows.realprice);
+			$("#detail").val(rows.detail);
+			var str="";
+			if(rows.fphoto==""){
+				str="back/images/zanwu.jpg";
+			}else{
+				str=rows.fphoto;
+			}
+			$("#showpic").html("<img id='img' src=../"+str+" style='float:left;' width='100' height='100'>");
+		}
+	}
+
+	//查询
+	function user_search() {
+		var username = $.trim($("#search_uname").val());
+
+		$('#show_user_info').datagrid({
+			url : '../resuser.action',
+			queryParams : {
+				op : 'userInfoSearch',
+				username : username
+			}
+		});
+	}
+	//添加  、修改商品
+	function addFoods() {
+		var fid = $.trim($("#fid").val());
+		var fname = $.trim($("#fname").val());
+		var normprice = $.trim($("#normprice").val());
+		var realprice = $.trim($("#realprice").val());
+		var detail = $.trim($("#detail").val());
+
+		if (fid == "") {
+			url = "../resuser.action?op=addUser";
+			data = {
+				fname : fname,
+				normprice : normprice,
+				realprice : realprice,
+				detail : detail
+			};
+		} else {
+			url = "../resuser.action?op=updateUser";
+			data = {
+				fid : fid,
+				fname : fname,
+				normprice : normprice,
+				realprice : realprice,
+				detail : detail
+			};
+		}
+
+		$.ajaxFileUpload({
+			url : url,
+			secureuri : false, /*使用HTTP协议 所以把这个禁用 */
+			fileElementId : "fphoto", //["pic","pic"] 你要上传的文件的 文本框ID
+			data : data,
+			dataType : "JSON",
+			success : function(data, status) {
+				data = $.trim(data);
+				if (data == "0") {
+					$.messager.alert('错误提示','操作失败','error'); 
+				} else if (data == "1") {
+					clearAll();
+					$('#show_add_user_info').dialog('close');
+					$('#show_user_info').datagrid('reload');
+				} else {
+					$.messager.alert('错误提示','请检查数据','error');
+				}
+			},
+			error : function(data, status, e) {
+				alert(e);
+			}
+		});
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

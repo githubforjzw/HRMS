@@ -100,7 +100,7 @@ drop table config_file_third_kind;
 /* 	 first_kind_name  : 试题一级分类名称                                                              */  
 create table config_question_first_kind ( 
 	qfk_id int primary key auto_increment,
-	first_kind_id varchar(20)   ,
+	first_kind_id var char(20)   ,
 	first_kind_name varchar(60)   
 )engine=MYISAM character set utf8;
 
@@ -205,7 +205,7 @@ select * from config_primary_key;
 drop table config_primary_key;
 
 insert into config_primary_key(primary_key_table,primary_key,key_name,primary_key_status) values('HumanFile','firstKindName','I机机构名称','0');
-insert into config_primary_key(primary_key_table,primary_key,key_name,primary_key_status) values('HumanFile','secondKindName','II机机构名称','1');
+insert into config_primary_key(primary_key_table,primary_key,key_name,primary_key_status) values(' ','secondKindName','II机机构名称','1');
 insert into config_primary_key(primary_key_table,primary_key,key_name,primary_key_status) values('HumanFile','thirdKindName','III机机构名称','0');
 insert into config_primary_key(primary_key_table,primary_key,key_name,primary_key_status) values('HumanFile','humanId','档案编号','1');
 insert into config_primary_key(primary_key_table,primary_key,key_name,primary_key_status) values('HumanFile','humanName','姓名','1');

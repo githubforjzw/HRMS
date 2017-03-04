@@ -16,6 +16,12 @@ public class BackController {
 	public String toFirst() {
 		return "back/first";
 	}
+	
+	//跳转到后台登录页面
+	@RequestMapping("/toBackLogin")
+	public String toBackLogin() {
+		return "back/backLogin";
+	}
 		
 		
 

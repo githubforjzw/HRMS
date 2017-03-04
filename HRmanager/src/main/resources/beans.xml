@@ -20,6 +20,8 @@
 	<!-- 启用 aop 代理机制 -->
 	<aop:aspectj-autoproxy />
 	
+
+	
 	<!-- 数据库 链接 -->
 	<context:property-placeholder location="classpath:mysql.properties" />
 

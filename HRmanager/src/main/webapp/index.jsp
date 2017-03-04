@@ -8,7 +8,9 @@
 </head>
 <body>
 <%
-	request.getRequestDispatcher("/toStudentShowBookInfo").forward(request, response);
+	request.getRequestDispatcher("/toBack").forward(request, response);
 %>
+
+
 </body>
 </html>

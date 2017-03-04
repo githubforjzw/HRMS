@@ -16,9 +16,11 @@
 
 	<!-- 前缀 后缀 -->
 	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="prefix" value="/WEB-INF/" />
 		<property name="suffix" value=".jsp" />
+		<property name="order" value="1"></property>
 	</bean>
+	
 	
 	<!-- 静态资源的识别 -->
 	<mvc:annotation-driven />
@@ -26,7 +28,8 @@
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources location="/images/" mapping="/images/**" />
 	<mvc:resources location="/files/" mapping="/files/**" />
-	<mvc:resources location="/" mapping="/*.heml" />
+	<mvc:resources location="/easyui/" mapping="/easyui/**/**" />
+	<mvc:resources location="/" mapping="/*.html" />
 
 	<!-- 文件上传 -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

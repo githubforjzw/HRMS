@@ -7,8 +7,8 @@
 /* 	 user_password  : 密码                                                                      */  
 create table users ( 
 	u_id int primary key auto_increment,
-	u_name varchar(60)  ,
-	u_true_name varchar(60)  ,
+	u_name varchar(60),
+	u_true_name varchar(60),
 	u_password varchar(60)  
 )engine=MYISAM character set utf8;
 
@@ -28,7 +28,7 @@ create table config_file_first_kind (
 	ffk_id int primary key auto_increment,
 	first_kind_id varchar(20)  ,
 	first_kind_name varchar(60)  ,
-	first_kind_salary_id varchar(20)   ,
+	first_kind_salary_id varchar(20),
 	first_kind_sale_id varchar(20)  
 )engine=MYISAM character set utf8;
 insert into config_file_first_kind(first_kind_id,first_kind_name,first_kind_salary_id,first_kind_sale_id) values('1','集团','1','1');
@@ -137,7 +137,8 @@ drop table config_question_second_kind;
 /*  config_public_char  : 公共字段设置，包括薪酬设置，职称设置，国籍，民族，宗教信仰，政治面貌，教育年限，学历,专业，特长，爱好，培训项目，培训成绩，奖励项目，奖励等级 */
 /* 	 pbc_id  : 主键，自动增长列                                                                       */
 /* 	 attribute_kind  : 属性的种类                                                                  */
-/* 	 attribute_name  : 属性的名称                                                                  */  
+/* 	 attribute_name  : 属性的名称
+ *                                                                   */  
 create table config_public_char ( 
 	pbc_id int primary key auto_increment,
 	attribute_kind varchar(60)  ,
@@ -443,7 +444,7 @@ create table human_file_dig (
 	 changer  varchar(60)  ,
 	 regist_time  timestamp  ,
 	 check_time  timestamp  ,
-	 change_time  timestamp  ,
+	 change_time  varchar(2000),
 	 lastly_change_time  timestamp  ,
 	 delete_time  timestamp  ,
 	 recovery_time  timestamp  ,

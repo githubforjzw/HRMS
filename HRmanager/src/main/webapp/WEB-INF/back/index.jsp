@@ -14,8 +14,7 @@
 <base href="<%=basePath%>" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>人力资源后台管理系统</title>
-
-<link rel="stylesheet" type="text/css" href="easyui/css/easyui.css">
+<link rel="stylesheet" type="text/css" href="easyui/jquery-easyui-themes-metro/metro-orange/easyui.css">
 <link rel="stylesheet" type="text/css" href="easyui/css/icon.css">
 <link rel="stylesheet" type="text/css" href="easyui/css/demo.css">
 <script type="text/javascript" src="easyui/js/jquery.min.js"></script>
@@ -36,7 +35,7 @@
 	<div data-options="region:'west',split:true,title:'信息管理' "
 		style="width: 200px;">
 		<div class="easyui-accordion"
-			data-options="fit:true,border:false,selected:false,multiple:true" style="">
+			data-options="fit:true,border:false,selected:false" style="">
 			<div title="系统管理" style="overflow: auto; padding: 10px;">
 				<ul id="systemManager" class="easyui-tree">
 					<li><span>人力资源档案管理设置</span></li>

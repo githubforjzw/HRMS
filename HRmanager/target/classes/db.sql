@@ -7,8 +7,8 @@
 /* 	 user_password  : 密码                                                                      */  
 create table users ( 
 	u_id int primary key auto_increment,
-	u_name varchar(60)  ,
-	u_true_name varchar(60)  ,
+	u_name varchar(60),
+	u_true_name varchar(60),
 	u_password varchar(60)  
 )engine=MYISAM character set utf8;
 

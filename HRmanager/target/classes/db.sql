@@ -82,7 +82,7 @@ create table config_file_third_kind (
 	third_kind_id varchar(20)   ,
 	third_kind_name varchar(60)   ,
 	third_kind_sale_id varchar(20)   ,
-	third_kind_is_retail char(2)   default '0'  
+	third_kind_is_retail varchar(2) default '0'  
 )engine=MYISAM character set utf8;
 
 
@@ -198,7 +198,7 @@ create table config_primary_key (
 	primary_key_table varchar(60) ,
 	primary_key varchar(60)  ,
 	key_name varchar(60)  ,
-	primary_key_status char(2) default '0'  
+	primary_key_status varchar(2) default '0'  
 )engine=MYISAM character set utf8;  
 
 select * from config_primary_key;
@@ -403,19 +403,19 @@ create table human_file_dig (
 	human_major_id  varchar(20)  ,
 	hunma_major_name  varchar(60)  ,
 	human_telephone  varchar(20)  ,
-	human_mobilephone  char(11)  ,
+	human_mobilephone  varchar(11)  ,
 	human_bank  varchar(50)  ,
 	human_account  varchar(30)  ,
 	human_qq  varchar(15)  ,
 	human_email  varchar(50)  ,
 	human_hobby  varchar(60)  ,
 	human_speciality  varchar(60)  ,
-	human_sex  char(4)  ,
+	human_sex  varchar(4)  ,
 	human_religion  varchar(50)  ,
 	human_party  varchar(50)  ,
 	human_nationality  varchar(50)  ,
 	human_race  varchar(50)  ,
-	human_birthday  datetime  ,
+	human_birthday  timestamp  ,
 	human_birthplace  varchar(50)  ,
 	human_age  int  ,
 	human_educated_degree  varchar(60)  ,
@@ -423,31 +423,31 @@ create table human_file_dig (
 	human_educated_major  varchar(60)  ,
 	human_society_security_id  varchar(30)  ,
 	human_id_card  varchar(20) ,
-	remark  text  ,
+	remark varchar(3000) ,
 	salary_standard_id  varchar(30)  ,
 	salary_standard_name  varchar(60)  ,
-	salary_sum  float  ,
-	demand_salaray_sum  float  ,
-	paid_salary_sum  float  ,
+	salary_sum  decimal(10,2)  ,
+	demand_salaray_sum  decimal(10,2)  ,
+	paid_salary_sum  decimal(10,2)  ,
 	major_change_amount  int  ,
 	bonus_amount  int  ,
 	training_amount  int  ,
 	 file_chang_amount  int  ,
-	 human_histroy_records  text  ,
-	 human_family_membership  text  ,
+	 human_histroy_records  varchar(3000)  ,
+	 human_family_membership  varchar(3000)  ,
 	 human_picture  varchar(255)  ,
 	 attachment_name  varchar(255)  ,
-	 check_status  char(2) default '0'  ,
+	 check_status  varchar(2) default '0'  ,
 	 register  varchar(60)  ,
 	 checker  varchar(60)  ,
 	 changer  varchar(60)  ,
-	 regist_time  datetime  ,
-	 check_time  datetime  ,
-	 change_time  datetime  ,
-	 lastly_change_time  datetime  ,
-	 delete_time  datetime  ,
-	 recovery_time  datetime  ,
-	 human_file_status char(2) default '1'  
+	 regist_time  timestamp  ,
+	 check_time  timestamp  ,
+	 change_time  timestamp  ,
+	 lastly_change_time  timestamp  ,
+	 delete_time  timestamp  ,
+	 recovery_time  timestamp  ,
+	 human_file_status varchar(2) default '1'  
 )engine=MYISAM character set utf8;
 
 
@@ -542,19 +542,19 @@ create table  human_file  (
 	 human_major_id  varchar(30)  ,
 	 hunma_major_name  varchar(60)  ,
 	 human_telephone  varchar(20)  ,
-	 human_mobilephone  char(11)  ,
+	 human_mobilephone  varchar(11)  ,
 	 human_bank  varchar(50)  ,
 	 human_account  varchar(30)  ,
 	 human_qq  varchar(15)  ,
 	 human_email  varchar(50)  ,
 	 human_hobby  varchar(60)  ,
 	 human_speciality  varchar(60)  ,
-	 human_sex  char(2) default '1'  ,
+	 human_sex  varchar(2) default '1'  ,
 	 human_religion  varchar(50)  ,
 	 human_party  varchar(50)  ,
 	 human_nationality  varchar(50)  ,
 	 human_race  varchar(50)  ,
-	 human_birthday  datetime  ,
+	 human_birthday  timestamp  ,
 	 human_birthplace  varchar(50)  ,
 	 human_age  int  ,
 	 human_educated_degree  varchar(60)  ,
@@ -562,31 +562,31 @@ create table  human_file  (
 	 human_educated_major  varchar(60)  ,
 	 human_society_security_id  varchar(30)  ,
 	 human_id_card  varchar(20)   ,
-	 remark  text  ,
+	 remark varchar(3000)  ,
 	 salary_standard_id  varchar(30)  ,
 	 salary_standard_name  varchar(60)  ,
-	 salary_sum  float  ,
-	 demand_salaray_sum  float  ,
-	 paid_salary_sum  float  ,
+	 salary_sum  decimal(10,2)  ,
+	 demand_salaray_sum  decimal(10,2)  ,
+	 paid_salary_sum  decimal(10,2)  ,
 	 major_change_amount  int  ,
 	 bonus_amount  int  ,
 	 training_amount  int  ,
 	 file_chang_amount  int  ,
-	 human_histroy_records  text  ,
-	 human_family_membership  text  ,
+	 human_histroy_records  varchar(3000)  ,
+	 human_family_membership  varchar(3000)   ,
 	 human_picture  varchar(255)  ,
 	 attachment_name  varchar(255)  ,
 	 check_status  int  ,
 	 register  varchar(60)  ,
 	 checker  varchar(60)  ,
 	 changer  varchar(60)  ,
-	 regist_time  datetime  ,
-	 check_time  datetime  ,
-	 change_time  datetime  ,
-	 lastly_change_time  datetime  ,
-	 delete_time  datetime  ,
-	 recovery_time  datetime  ,
-	 human_file_status  char(2) default '1'  
+	 regist_time  timestamp  ,
+	 check_time  timestamp  ,
+	 change_time  timestamp  ,
+	 lastly_change_time  timestamp  ,
+	 delete_time  timestamp  ,
+	 recovery_time  timestamp  ,
+	 human_file_status  varchar(2) default '1'  
 )engine=MYISAM character set utf8; 
 
 select * from human_file;
@@ -611,7 +611,7 @@ create table  salary_standard_details  (
 	 standard_name  varchar(60)  ,
 	 item_id  int  ,
 	 item_name  varchar(60)  ,
-	 salary  float  
+	 salary  decimal(10,2)   
 )engine=MYISAM character set utf8;  
 
 select * from salary_standard_details;
@@ -647,14 +647,14 @@ create table  salary_standard  (
 	 register  varchar(60)  ,
 	 checker  varchar(60)  ,
 	 changer  varchar(60)  ,
-	 regist_time  datetime  ,
-	 check_time  datetime  ,
-	 change_time  datetime  ,
-	 salary_sum  float  ,
+	 regist_time  timestamp  ,
+	 check_time  timestamp  ,
+	 change_time  timestamp  ,
+	 salary_sum  decimal(10,2)  ,
 	 check_status  int  ,
 	 change_status  int  ,
-	 check_comment  text  ,
-	 remark  text  
+	 check_comment  varchar(3000)  ,
+	 remark  varchar(3000)  
 )engine=MYISAM character set utf8;
 
 select * from salary_standard;
@@ -692,14 +692,14 @@ create table  bonus  (
 	 human_id  varchar(30)  ,
 	 human_name  varchar(60)  ,
 	 bonus_item  varchar(60)  ,
-	 bonus_worth  float  ,
+	 bonus_worth  decimal(10,2)  ,
 	 bonus_degree  varchar(60)  ,
-	 remark  text  ,
+	 remark  varchar(3000)  ,
 	 register  varchar(60)  ,
 	 checker  varchar(60)  ,
-	 regist_time  datetime  ,
-	 check_time  datetime  ,
-	 check_status  char(2) default '1'  
+	 regist_time  timestamp  ,
+	 check_time  timestamp  ,
+	 check_status  varchar(2) default '1'  
 )engine=MYISAM character set utf8;
 
 select * from bonus;
@@ -738,15 +738,15 @@ create table  training  (
 	 human_id  varchar(30)  ,
 	 human_name  varchar(60)  ,
 	 training_item  varchar(60)  ,
-	 training_time  datetime  ,
+	 training_time  timestamp  ,
 	 training_hour  int  ,
 	 training_degree  varchar(60)  ,
 	 register  varchar(60)  ,
 	 checker  varchar(60)  ,
-	 regist_time  datetime  ,
-	 check_time  datetime  ,
+	 regist_time  timestamp  ,
+	 check_time  timestamp  ,
 	 checkstatus  int  ,
-	 remark  text  
+	 remark  varchar(3000)  
 )engine=MYISAM character set utf8;
 
 select * from training;
@@ -820,17 +820,17 @@ create table  major_change  (
 	 human_name  varchar(60)  ,
 	 salary_standard_id  varchar(30)  ,
 	 salary_standard_name  varchar(60)  ,
-	 salary_sum  float  ,
+	 salary_sum  decimal(10,2)  ,
 	 new_salary_standard_id  varchar(30)  ,
 	 new_salary_standard_name  varchar(60)  ,
-	 new_salary_sum  float  ,
-	 change_reason  text  ,
-	 check_reason  text  ,
+	 new_salary_sum  decimal(10,2)  ,
+	 change_reason  varchar(3000)  ,
+	 check_reason  varchar(3000)  ,
 	 check_status  int  ,
 	 register  varchar(60)  ,
 	 checker  varchar(60)  ,
-	 regist_time  datetime  ,
-	 check_time  datetime  
+	 regist_time  timestamp  ,
+	 check_time  timestamp  
 )engine=MYISAM character set utf8;
 
 select * from major_change;
@@ -871,12 +871,12 @@ create table  salary_grant  (
 	 third_kind_id  varchar(30)  ,
 	 third_kind_name  varchar(60)  ,
 	 human_amount  int  ,
-	 salary_standard_sum  float  ,
-	 salary_paid_sum  float  ,
+	 salary_standard_sum  decimal(10,2)  ,
+	 salary_paid_sum  decimal(10,2)  ,
 	 register  varchar(60)  ,
-	 regist_time  datetime  ,
+	 regist_time  timestamp  ,
 	 checker  varchar(60)  ,
-	 check_time  datetime  ,
+	 check_time  timestamp  ,
 	 check_status  int  
 )engine=MYISAM character set utf8;
 
@@ -904,11 +904,11 @@ create table  salary_grant_details  (
 	 salary_grant_id  varchar(30)  ,
 	 human_id  varchar(30)  ,
 	 human_name  varchar(60)  ,
-	 bouns_sum  float  ,
-	 sale_sum  float  ,
-	 deduct_sum  float  ,
-	 salary_standard_sum  float  ,
-	 salary_paid_sum  float  
+	 bouns_sum  decimal(10,2)  ,
+	 sale_sum  decimal(10,2)  ,
+	 deduct_sum  decimal(10,2)  ,
+	 salary_standard_sum  decimal(10,2)  ,
+	 salary_paid_sum  decimal(10,2)  
 )engine=MYISAM character set utf8;
 
 select * from salary_grant_details;
@@ -955,13 +955,13 @@ create table  engage_major_release  (
 	 major_name  varchar(60)  ,
 	 human_amount  int  ,
 	 engage_type  varchar(60)  ,
-	 deadline  datetime  ,
+	 deadline  timestamp  ,
 	 register  varchar(60)  ,
 	 changer  varchar(60)  ,
-	 regist_time  datetime  ,
-	 change_time  datetime  ,
-	 major_describe  text  ,
-	 engage_required  text  
+	 regist_time  timestamp  ,
+	 change_time  timestamp  ,
+	 major_describe  varchar(3000)  ,
+	 engage_required  varchar(3000)  
 )engine=MYISAM character set utf8; 
 
 select * from engage_major_release;
@@ -1018,7 +1018,7 @@ create table  engage_exam  (
 	 major_id  varchar(30)  ,
 	 major_name  varchar(60)  ,
 	 register  varchar(60)  ,
-	 regist_time  datetime  ,
+	 regist_time  timestamp  ,
 	 limite_time  int  
 )engine=MYISAM character set utf8;
 
@@ -1055,10 +1055,10 @@ create table  engage_answer  (
 	 human_name  varchar(60)  ,
 	 human_idcard  varchar(30)  ,
 	 major_kind_id  varchar(30)  ,
-	 major_kind_name  char(10)  ,
-	 major_id  char(10)  ,
-	 major_name  char(10)  ,
-	 test_time  datetime  ,
+	 major_kind_name  varchar(10)  ,
+	 major_id  varchar(10)  ,
+	 major_name  varchar(10)  ,
+	 test_time  timestamp  ,
 	 use_time  varchar(20)  ,
 	 total_point  numeric(5,2)  
 )engine=MYISAM character set utf8;
@@ -1118,17 +1118,17 @@ create table  engage_subjects  (
 	 second_kind_id  varchar(30)  ,
 	 second_kind_name  varchar(60)  ,
 	 register  varchar(60)  ,
-	 regist_time  datetime  ,
+	 regist_time  timestamp  ,
 	 derivation  varchar(60)  ,
-	 content  text  ,
-	 key_a  text  ,
-	 key_b  text  ,
-	 key_c  text  ,
-	 key_d  text  ,
-	 key_e  text  ,
+	 content  varchar(3000)  ,
+	 key_a  varchar(3000)  ,
+	 key_b  varchar(3000)  ,
+	 key_c  varchar(3000)  ,
+	 key_d  varchar(3000)  ,
+	 key_e  varchar(3000)  ,
 	 correct_key  varchar(10)  ,
 	 changer  varchar(60)  ,
-	 change_time  datetime  
+	 change_time  timestamp  
 )engine=MYISAM character set utf8;
 
 select * from engage_subjects;
@@ -1213,7 +1213,7 @@ create table  engage_resume  (
 	 human_party  varchar(60)  ,
 	 human_nationality  varchar(60)  ,
 	 human_race  varchar(60)  ,
-	 human_birthday  datetime  ,
+	 human_birthday  timestamp  ,
 	 human_age  int  ,
 	 human_educated_degree  varchar(60)  ,
 	 human_educated_years  int  ,
@@ -1222,25 +1222,25 @@ create table  engage_resume  (
 	 human_idcard  varchar(60)  ,
 	 human_birthplace  varchar(200)  ,
 	 demand_salary_standard  numeric(15,2)  ,
-	 human_history_records  text  ,
-	 remark  text  ,
-	 recomandation  text  ,
+	 human_history_records  varchar(3000)  ,
+	 remark  varchar(3000)  ,
+	 recomandation  varchar(3000)  ,
 	 human_picture  varchar(60)  ,
 	 attachment_name  varchar(60)  ,
 	 check_status  int  ,
 	 register  varchar(60)  ,
-	 regist_time  datetime  ,
+	 regist_time  timestamp  ,
 	 checker  varchar(60)  ,
-	 check_time  datetime  ,
+	 check_time  timestamp  ,
 	 interview_status  int  ,
-	 total_points  float  ,
+	 total_points  decimal(10,2)  ,
 	 test_amount  int  ,
 	 test_checker  varchar(60)  ,
-	 test_check_time  datetime  ,
+	 test_check_time  timestamp  ,
 	 pass_register  varchar(60)  ,
-	 pass_regist_time  datetime  ,
+	 pass_regist_time  timestamp  ,
 	 pass_checker  varchar(60)  ,
-	 pass_check_time  datetime  ,
+	 pass_check_time  timestamp  ,
 	 pass_check_status  int  ,
 	 pass_checkComment  varchar(60)  ,
 	 pass_passComment  varchar(60)  
@@ -1297,12 +1297,12 @@ create table  engage_interview  (
 	 multi_quality_degree  varchar(20)  ,
 	 register  varchar(60)  ,
 	 checker  varchar(60)  ,
-	 registe_time  datetime  ,
-	 check_time  datetime  ,
+	 registe_time  timestamp  ,
+	 check_time  timestamp  ,
 	 resume_id  int  ,
 	 result  varchar(20)  ,
-	 interview_comment  text  ,
-	 check_comment  text  ,
+	 interview_comment  varchar(3000)  ,
+	 check_comment  varchar(3000)  ,
 	 interview_status  int  ,
 	 check_status  int  
 )engine=MYISAM character set utf8;

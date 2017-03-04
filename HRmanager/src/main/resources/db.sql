@@ -443,7 +443,7 @@ create table human_file_dig (
 	 changer  varchar(60)  ,
 	 regist_time  timestamp  ,
 	 check_time  timestamp  ,
-	 change_time  timestamp  ,
+	 change_time  varchar(2000),
 	 lastly_change_time  timestamp  ,
 	 delete_time  timestamp  ,
 	 recovery_time  timestamp  ,

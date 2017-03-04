@@ -65,7 +65,7 @@ public class Human_file_dig implements Serializable{
 	private String changer ;
 	private Timestamp regist_time ;
 	private Timestamp check_time ;
-	private Timestamp change_time ;
+	private String change_time ;
 	private Timestamp lastly_change_time ;
 	private Timestamp delete_time ;
 	private Timestamp recovery_time ;
@@ -557,11 +557,11 @@ public class Human_file_dig implements Serializable{
 		this.check_time = check_time;
 	}
 
-	public Timestamp getChange_time() {
+	public String getChange_time() {
 		return change_time;
 	}
 
-	public void setChange_time(Timestamp change_time) {
+	public void setChange_time(String change_time) {
 		this.change_time = change_time;
 	}
 

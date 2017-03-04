@@ -54,6 +54,7 @@
 				</ul>
 			</li>
 		</ul>
+		
 	</div>
 	
 	<div data-options="region:'east',split:true,collapsed:true,title:'隐藏分区'" style="width: 100px; padding: 10px;">敬请期待</div>

@@ -1,6 +1,8 @@
 package com.yc.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Config_major_kind implements Serializable{
 
@@ -9,11 +11,10 @@ public class Config_major_kind implements Serializable{
 	private int mfk_id ;
 	private String major_kind_id ;
 	private String major_kind_name ;
+	private List<Config_major> list=new ArrayList<Config_major>();
 	
-	@Override
-	public String toString() {
-		return "Config_major_kind [mfk_id=" + mfk_id + ", major_kind_id=" + major_kind_id + ", major_kind_name="
-				+ major_kind_name + "]";
+	public Config_major_kind() {
+		super();
 	}
 
 	public int getMfk_id() {
@@ -39,6 +40,21 @@ public class Config_major_kind implements Serializable{
 	public void setMajor_kind_name(String major_kind_name) {
 		this.major_kind_name = major_kind_name;
 	}
+
+	public List<Config_major> getList() {
+		return list;
+	}
+
+	public void setList(List<Config_major> list) {
+		this.list = list;
+	}
+
+	@Override
+	public String toString() {
+		return "Config_major_kind [mfk_id=" + mfk_id + ", major_kind_id=" + major_kind_id + ", major_kind_name="
+				+ major_kind_name + ", list=" + list + "]";
+	}
+	
 	
 	
 }

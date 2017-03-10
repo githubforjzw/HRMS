@@ -8,8 +8,7 @@ public class Training implements Serializable{
 	private static final long serialVersionUID = 5299871373731734987L;
 
 	private int tra_id ;
-	private String major_kind_id  ;
-	private String major_kind_name ;
+	private Config_major_kind config_major_kind;
 	private String major_id ;
 	private String major_name ;
 	private String human_id ;
@@ -27,8 +26,7 @@ public class Training implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Training [tra_id=" + tra_id + ", major_kind_id=" + major_kind_id + ", major_kind_name="
-				+ major_kind_name + ", major_id=" + major_id + ", major_name=" + major_name + ", human_id=" + human_id
+		return "Training [tra_id=" + tra_id + ", major_kind_id=" + ", major_id=" + major_id + ", major_name=" + major_name + ", human_id=" + human_id
 				+ ", human_name=" + human_name + ", training_item=" + training_item + ", training_time=" + training_time
 				+ ", training_hour=" + training_hour + ", training_degree=" + training_degree + ", register=" + register
 				+ ", checker=" + checker + ", regist_time=" + regist_time + ", check_time=" + check_time
@@ -43,20 +41,11 @@ public class Training implements Serializable{
 		this.tra_id = tra_id;
 	}
 
-	public String getMajor_kind_id() {
-		return major_kind_id;
+	public Config_major_kind getConfig_major_kind() {
+		return config_major_kind;
 	}
-
-	public void setMajor_kind_id(String major_kind_id) {
-		this.major_kind_id = major_kind_id;
-	}
-
-	public String getMajor_kind_name() {
-		return major_kind_name;
-	}
-
-	public void setMajor_kind_name(String major_kind_name) {
-		this.major_kind_name = major_kind_name;
+	public void setConfig_major_kind(Config_major_kind config_major_kind) {
+		this.config_major_kind = config_major_kind;
 	}
 
 	public String getMajor_id() {

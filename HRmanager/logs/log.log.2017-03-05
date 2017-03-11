@@ -1,0 +1,23 @@
+2017-03-05 17:19:12  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sun Mar 05 17:19:12 CST 2017]; root of context hierarchy
+2017-03-05 17:19:12  [ main:167 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-05 17:19:14  [ main:1937 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-05 17:19:47  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sun Mar 05 17:19:47 CST 2017]; root of context hierarchy
+2017-03-05 17:19:47  [ main:44 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-05 17:19:48  [ main:390 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-05 17:19:50  [ main:2869 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_id,second_kind_name,register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?,?,?,?,?, ?,?,?,?, ?,?,?,?,?,?,?); 
+2017-03-05 17:19:50  [ main:2936 ] - [ DEBUG ]  ==> Parameters: null, 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-05 17:19:48.834(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), null, Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-05 17:19:48.834(Timestamp)
+2017-03-05 17:20:59  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sun Mar 05 17:20:59 CST 2017]; root of context hierarchy
+2017-03-05 17:20:59  [ main:52 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-05 17:21:00  [ main:621 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-05 17:21:01  [ main:1602 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_id,second_kind_name,register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?,?,?,?,?, ?,?,?,?, ?,?,?,?,?,?,?); 
+2017-03-05 17:21:01  [ main:1631 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-05 17:21:00.784(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), null, Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-05 17:21:00.784(Timestamp)
+2017-03-05 17:23:34  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sun Mar 05 17:23:34 CST 2017]; root of context hierarchy
+2017-03-05 17:23:34  [ main:67 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-05 17:23:34  [ main:529 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-05 17:23:35  [ main:1427 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_id,second_kind_name,register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?,?,?,?,?, ?,?,?,?, ?,?,?,?,?,?,?); 
+2017-03-05 17:23:35  [ main:1452 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-05 17:23:35.192(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), Java(String), Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-05 17:23:35.192(Timestamp)
+2017-03-05 17:25:22  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sun Mar 05 17:25:22 CST 2017]; root of context hierarchy
+2017-03-05 17:25:22  [ main:37 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-05 17:25:22  [ main:381 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-05 17:25:23  [ main:1199 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_id,second_kind_name,register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?,?,?,?,?, ?,?,?,?, ?,?,?,?,?,?,?) 
+2017-03-05 17:25:23  [ main:1225 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-05 17:25:23.094(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), Java(String), Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-05 17:25:23.094(Timestamp)

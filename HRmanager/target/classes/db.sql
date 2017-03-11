@@ -28,8 +28,8 @@ select * from users;
 /* 	 first_kind_sale_id  : 一级机构销售责任人编号                                                        */  
 create table config_file_first_kind ( 
 	ffk_id int primary key auto_increment,
-	first_kind_id varchar(20)  ,
-	first_kind_name varchar(60)  ,
+	first_kind_id varchar(20),
+	first_kind_name varchar(60) ,
 	first_kind_salary_id varchar(20),
 	first_kind_sale_id varchar(20)  
 )engine=MYISAM character set utf8;
@@ -96,6 +96,37 @@ select * from config_file_third_kind;
 drop table config_file_third_kind;
 
 
+insert into config_question_first_kind(first_kind_id,first_kind_name) values('1','基础类');
+insert into config_question_first_kind(first_kind_id,first_kind_name) values('2','技术类');
+insert into config_question_first_kind(first_kind_id,first_kind_name) values('2','管理类');
+select * from config_question_first_kind;
+drop table config_question_first_kind;
+
+
+/* 创建新表  config_question_second_kind 。                                                        */
+/*  config_question_second_kind  : 试题二级分类设置                                                   */
+/* 	 qsk_id  : 主键，自动增长列                                                                       */
+/* 	 first_kind_id  : 试题一级分类编号                                                                */
+/* 	 first_kind_name  : 试题一级分类名称                                                              */
+/* 	 second_kind_id  : 试题二级分类编号                                                               */
+/* 	 second_kind_name  : 试题二级分类名称                                                             */  
+create table config_question_second_kind ( 
+	qsk_id int primary key auto_increment,
+	first_kind_id varchar(20)   ,
+	first_kind_name varchar(60)   ,
+	second_kind_id varchar(20)   ,
+	second_kind_name varchar(60)   
+)engine=MYISAM character set utf8;
+
+insert into config_question_second_kind(first_kind_id,first_kind_name,second_kind_id,second_kind_name) values('1','基础类','1','语言类');
+insert into config_question_second_kind(first_kind_id,first_kind_name,second_kind_id,second_kind_name) values('1','基础类','2','管理类');
+insert into config_question_second_kind(first_kind_id,first_kind_name,second_kind_id,second_kind_name) values('2','技术类','1','软件开发类');
+insert into config_question_second_kind(first_kind_id,first_kind_name,second_kind_id,second_kind_name) values('2','技术类','2','生物制药类');
+insert into config_question_second_kind(first_kind_id,first_kind_name,second_kind_id,second_kind_name) values('3','管理类','1','销售管理');
+insert into config_question_second_kind(first_kind_id,first_kind_name,second_kind_id,second_kind_name) values('3','管理类','2','行政管理');
+/*根据一级分类查询所有二级分类*/
+select first_kind_name,group_concat(second_kind_name) from config_question_second_kind  group by first_kind_id;
+drop table config_question_second_kind;
 
 
 /* 创建新表  config_public_char 。                                                                 */
@@ -243,6 +274,7 @@ insert into config_primary_key(primary_key_table,primary_key,key_name,primary_ke
 /* 	 mfk_id  : 主键，自动增长列                                                                       */
 /* 	 major_kind_id  : 职位分类编号                                                                  */
 /* 	 major_kind_name  : 职位分类名称                                                                */  
+/* 	 major_kind_name  : 职分类名称                                                                */  
 create table config_major_kind ( 
 	mfk_id int primary key auto_increment,
 	major_kind_id varchar(20)  ,
@@ -1008,7 +1040,7 @@ alter table  engage_exam_details
 
 /* 创建新表  engage_exam 。                                                                        */
 /*  engage_exam  : 试卷登记表                                                                      */
-/* 	 exa_id  : 主键，自动增长列                                                                       */
+/* 	 exa_id  : 主键,自动增长列                                                                       */
 /* 	 exam_number  : 试卷编号                                                                      */
 /* 	 major_kind_id  : 职位分类编号                                                                  */
 /* 	 major_kind_name  : 职位分类名称                                                                */
@@ -1034,6 +1066,7 @@ drop table engage_exam;
 
 alter table  engage_exam 
 	add constraint  engage_exam_PK  primary key ( exa_id )   
+d7a952f3201703102103289
 
 
 
@@ -1138,6 +1171,15 @@ create table  engage_subjects  (
 	 change_time  timestamp  
 )engine=MYISAM character set utf8;
 
+insert into engage_subjects(second_kind_name,content,key_a,key_b,key_c,key_d,key_e) values('语言类','世界上最美的国家','a','b','v','s','r');
+insert into engage_subjects(second_kind_name,content,key_a,key_b,key_c,key_d,key_e) values('语言类','nibuzhida','a','b','v','s','r');
+insert into engage_subjects(second_kind_name,content,key_a,key_b,key_c,key_d,key_e) values('管理类','sdfsdfasdf','a','b','v','s','r');
+insert into engage_subjects(second_kind_name,content,key_a,key_b,key_c,key_d,key_e) values('管理类','sdfsdafasdf','a','b','v','s','r');
+insert into engage_subjects(second_kind_name,content,key_a,key_b,key_c,key_d,key_e) values('软件开发类','sdfsadfsdf','a','b','v','s','r');
+insert into engage_subjects(second_kind_name,content,key_a,key_b,key_c,key_d,key_e) values('软件开发类','gjghfjhgg','a','b','v','s','r');
+
+select second_kind_name,content,key_a,key_b,key_c,key_d,key_e from engage_subjects;
+delete from engage_subjects;
 select * from engage_subjects;
 drop table engage_subjects;
 

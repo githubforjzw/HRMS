@@ -7,28 +7,25 @@ public class Engage_exam implements Serializable{
 
 	private static final long serialVersionUID = 6538862673973451828L;
 
-	private int exa_id ;
+	private Integer exa_id ;
 	private String exam_number;
-	private String major_kind_id ;
-	private String major_kind_name ;
-	private String major_id ;
-	private String major_name ;
+	private Config_major Config_major;
 	private String register ;
 	private Timestamp regist_time ;
-	private int limite_time ;
+	private Integer limite_time ;
 	
 	@Override
 	public String toString() {
-		return "Engage_exam [exa_id=" + exa_id + ", exam_number=" + exam_number + ", major_kind_id=" + major_kind_id
-				+ ", major_kind_name=" + major_kind_name + ", major_id=" + major_id + ", major_name=" + major_name
+		return "Engage_exam [exa_id=" + exa_id + ", exam_number=" + exam_number + ", major_kind_id=" + Config_major.getConfig_major_kind().getMajor_kind_id()
+				+ ", major_kind_name=" + Config_major.getConfig_major_kind().getMajor_kind_name() + ", major_id=" + Config_major.getMajor_id() + ", major_name=" + Config_major.getMajor_name()
 				+ ", register=" + register + ", regist_time=" + regist_time + ", limite_time=" + limite_time + "]";
 	}
 
-	public int getExa_id() {
+	public Integer getExa_id() {
 		return exa_id;
 	}
 
-	public void setExa_id(int exa_id) {
+	public void setExa_id(Integer exa_id) {
 		this.exa_id = exa_id;
 	}
 
@@ -40,37 +37,6 @@ public class Engage_exam implements Serializable{
 		this.exam_number = exam_number;
 	}
 
-	public String getMajor_kind_id() {
-		return major_kind_id;
-	}
-
-	public void setMajor_kind_id(String major_kind_id) {
-		this.major_kind_id = major_kind_id;
-	}
-
-	public String getMajor_kind_name() {
-		return major_kind_name;
-	}
-
-	public void setMajor_kind_name(String major_kind_name) {
-		this.major_kind_name = major_kind_name;
-	}
-
-	public String getMajor_id() {
-		return major_id;
-	}
-
-	public void setMajor_id(String major_id) {
-		this.major_id = major_id;
-	}
-
-	public String getMajor_name() {
-		return major_name;
-	}
-
-	public void setMajor_name(String major_name) {
-		this.major_name = major_name;
-	}
 
 	public String getRegister() {
 		return register;
@@ -88,12 +54,25 @@ public class Engage_exam implements Serializable{
 		this.regist_time = regist_time;
 	}
 
-	public int getLimite_time() {
+	public Integer getLimite_time() {
 		return limite_time;
 	}
 
-	public void setLimite_time(int limite_time) {
+	public void setLimite_time(Integer limite_time) {
 		this.limite_time = limite_time;
+	}
+
+	public Config_major getConfig_major() {
+		return Config_major;
+	}
+
+	public void setConfig_major(Config_major config_major) {
+		Config_major = config_major;
+	}
+
+
+	public Engage_exam() {
+		super();
 	}
 	
 	

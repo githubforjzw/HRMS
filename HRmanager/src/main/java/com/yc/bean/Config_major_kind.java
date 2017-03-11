@@ -1,14 +1,17 @@
 package com.yc.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Config_major_kind implements Serializable{
 
 	private static final long serialVersionUID = -6518290776717236115L;
 
-	private int mfk_id ;
+	private Integer mfk_id ;
 	private String major_kind_id ;
 	private String major_kind_name ;
+	private List<Config_major> list = new ArrayList<Config_major>();
 	
 	@Override
 	public String toString() {
@@ -16,11 +19,11 @@ public class Config_major_kind implements Serializable{
 				+ major_kind_name + "]";
 	}
 
-	public int getMfk_id() {
+	public Integer getMfk_id() {
 		return mfk_id;
 	}
 
-	public void setMfk_id(int mfk_id) {
+	public void setMfk_id(Integer mfk_id) {
 		this.mfk_id = mfk_id;
 	}
 
@@ -38,6 +41,10 @@ public class Config_major_kind implements Serializable{
 
 	public void setMajor_kind_name(String major_kind_name) {
 		this.major_kind_name = major_kind_name;
+	}
+
+	public Config_major_kind() {
+		super();
 	}
 	
 	

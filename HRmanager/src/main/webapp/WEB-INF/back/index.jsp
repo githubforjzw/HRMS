@@ -21,6 +21,7 @@
 <script type="text/javascript" src="easyui/js/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/js/index.js"></script>
 <script type="text/javascript" src="easyui/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="easyui/js/datagrid-detailview.js"></script>
 
 <!--  <script type="text/javascript" src="../js/ajaxfileupload.js"></script> -->
 <script type="text/javascript" src="js/showpic.js"></script>
@@ -46,8 +47,8 @@
 			</div>
 			<div title="人力资源档案管理" style="overflow: auto; padding: 10px;">
 				<ul id="humanResourceFileManage" class="easyui-tree">
-					<li><span>人力资源档案登记</span></li>
-					<li><span>人力资源档案登记复核</span></li>
+					<li id="humanResourceFileLoad"><span>人力资源档案登记</span></li>
+					<li id="humanResourceFileCheck"><span>人力资源档案登记复核</span></li>
 					<li><span>人力资源档案查询</span></li>
 					<li><span>人力资源档案变更</span></li>
 					<li><span>人力资源档案删除</span></li>

@@ -6,7 +6,7 @@ public class Config_question_first_kind implements Serializable{
 
 	private static final long serialVersionUID = 5055961846121123440L;
 
-	private int qfk_id ;
+	private Integer qfk_id ;
 	private String first_kind_id ;
 	private String first_kind_name ;
 	
@@ -16,11 +16,11 @@ public class Config_question_first_kind implements Serializable{
 				+ ", first_kind_name=" + first_kind_name + "]";
 	}
 
-	public int getQfk_id() {
+	public Integer getQfk_id() {
 		return qfk_id;
 	}
 
-	public void setQfk_id(int qfk_id) {
+	public void setQfk_id(Integer qfk_id) {
 		this.qfk_id = qfk_id;
 	}
 
@@ -38,6 +38,11 @@ public class Config_question_first_kind implements Serializable{
 
 	public void setFirst_kind_name(String first_kind_name) {
 		this.first_kind_name = first_kind_name;
+	}
+
+
+	public Config_question_first_kind() {
+		super();
 	}
 	
 	

@@ -7,11 +7,8 @@ public class Engage_subjects implements Serializable{
 
 	private static final long serialVersionUID = -5814234088555871841L;
 
-	private int sub_id ;
-	private String first_kind_id  ;
-	private String first_kind_name;
-	private String second_kind_id;
-	private String second_kind_name ;
+	private Integer sub_id ;
+	private Config_question_second_kind config_question_second_kind;
 	private String register ;
 	private Timestamp regist_time  ;
 	private String derivation ;
@@ -27,52 +24,20 @@ public class Engage_subjects implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Engage_subjects [sub_id=" + sub_id + ", first_kind_id=" + first_kind_id + ", first_kind_name="
-				+ first_kind_name + ", second_kind_id=" + second_kind_id + ", second_kind_name=" + second_kind_name
+		return "Engage_subjects [sub_id=" + sub_id + ", first_kind_id=" + config_question_second_kind.getConfig_question_first_kind().getFirst_kind_id() + ", first_kind_name="
+				+ config_question_second_kind.getConfig_question_first_kind().getFirst_kind_name() + ", second_kind_id=" + config_question_second_kind.getSecond_kind_id() + ", second_kind_name=" + config_question_second_kind.getSecond_kind_name()
 				+ ", register=" + register + ", regist_time=" + regist_time + ", derivation=" + derivation
 				+ ", content=" + content + ", key_a=" + key_a + ", key_b=" + key_b + ", key_c=" + key_c + ", key_d="
 				+ key_d + ", key_e=" + key_e + ", correct_key=" + correct_key + ", changer=" + changer
 				+ ", change_time=" + change_time + "]";
 	}
 
-	public int getSub_id() {
+	public Integer getSub_id() {
 		return sub_id;
 	}
 
-	public void setSub_id(int sub_id) {
+	public void setSub_id(Integer sub_id) {
 		this.sub_id = sub_id;
-	}
-
-	public String getFirst_kind_id() {
-		return first_kind_id;
-	}
-
-	public void setFirst_kind_id(String first_kind_id) {
-		this.first_kind_id = first_kind_id;
-	}
-
-	public String getFirst_kind_name() {
-		return first_kind_name;
-	}
-
-	public void setFirst_kind_name(String first_kind_name) {
-		this.first_kind_name = first_kind_name;
-	}
-
-	public String getSecond_kind_id() {
-		return second_kind_id;
-	}
-
-	public void setSecond_kind_id(String second_kind_id) {
-		this.second_kind_id = second_kind_id;
-	}
-
-	public String getSecond_kind_name() {
-		return second_kind_name;
-	}
-
-	public void setSecond_kind_name(String second_kind_name) {
-		this.second_kind_name = second_kind_name;
 	}
 
 	public String getRegister() {
@@ -169,6 +134,11 @@ public class Engage_subjects implements Serializable{
 
 	public void setChange_time(Timestamp change_time) {
 		this.change_time = change_time;
+	}
+
+
+	public Engage_subjects() {
+		super();
 	}
 	
 	

@@ -6,42 +6,34 @@ public class Config_major implements Serializable{
 
 	private static final long serialVersionUID = 6060666461814452078L;
 
-	private int mak_id ;
-	private String major_kind_id ;
-	private String major_kind_name ;
+	private Integer mak_id ;
+	private Config_major_kind config_major_kind;
 	private String major_id ;
 	private String major_name ;
-	private int test_amount ;
+	private Integer test_amount ;
 	
 	@Override
 	public String toString() {
-		return "Config_major [mak_id=" + mak_id + ", major_kind_id=" + major_kind_id + ", major_kind_name="
-				+ major_kind_name + ", major_id=" + major_id + ", major_name=" + major_name + ", test_amount="
+		return "Config_major [mak_id=" + mak_id + ", major_kind_id=" + config_major_kind.getMajor_kind_id() + ", major_kind_name="
+				+ config_major_kind.getMajor_kind_name() + ", major_id=" + major_id + ", major_name=" + major_name + ", test_amount="
 				+ test_amount + "]";
 	}
 
-	public int getMak_id() {
+	public Integer getMak_id() {
 		return mak_id;
 	}
 
-	public void setMak_id(int mak_id) {
+	public void setMak_id(Integer mak_id) {
 		this.mak_id = mak_id;
 	}
 
-	public String getMajor_kind_id() {
-		return major_kind_id;
+
+	public Config_major_kind getConfig_major_kind() {
+		return config_major_kind;
 	}
 
-	public void setMajor_kind_id(String major_kind_id) {
-		this.major_kind_id = major_kind_id;
-	}
-
-	public String getMajor_kind_name() {
-		return major_kind_name;
-	}
-
-	public void setMajor_kind_name(String major_kind_name) {
-		this.major_kind_name = major_kind_name;
+	public void setConfig_major_kind(Config_major_kind config_major_kind) {
+		this.config_major_kind = config_major_kind;
 	}
 
 	public String getMajor_id() {
@@ -60,13 +52,18 @@ public class Config_major implements Serializable{
 		this.major_name = major_name;
 	}
 
-	public int getTest_amount() {
+	public Integer getTest_amount() {
 		return test_amount;
 	}
 
-	public void setTest_amount(int test_amount) {
+	public void setTest_amount(Integer test_amount) {
 		this.test_amount = test_amount;
 	}
+
+	public Config_major() {
+		super();
+	}
+	
 	
 	
 }

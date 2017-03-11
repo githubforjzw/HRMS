@@ -7,88 +7,48 @@ public class Training implements Serializable{
 
 	private static final long serialVersionUID = 5299871373731734987L;
 
-	private int tra_id ;
-	private String major_kind_id  ;
-	private String major_kind_name ;
-	private String major_id ;
-	private String major_name ;
-	private String human_id ;
-	private String human_name;
+	private Integer tra_id ;
+	private Config_major config_major;
+	private Human_file_dig human_file_dig;
 	private String training_item ;
 	private Timestamp training_time ;
-	private int training_hour ;
+	private Integer training_hour ;
 	private String training_degree ;
 	private String register ;
 	private String checker ;
 	private Timestamp regist_time ;
 	private Timestamp check_time ;
-	private int checkstatus;
+	private Integer checkstatus;
 	private String remark ;
 	
 	@Override
 	public String toString() {
-		return "Training [tra_id=" + tra_id + ", major_kind_id=" + major_kind_id + ", major_kind_name="
-				+ major_kind_name + ", major_id=" + major_id + ", major_name=" + major_name + ", human_id=" + human_id
-				+ ", human_name=" + human_name + ", training_item=" + training_item + ", training_time=" + training_time
+		return "Training [tra_id=" + tra_id + ", major_kind_id=" + config_major.getConfig_major_kind().getMajor_kind_id() + ", major_kind_name="
+				+ config_major.getConfig_major_kind().getMajor_kind_name() + ", major_id=" + config_major.getMajor_id() + ", major_name=" + config_major.getMajor_name() + ", human_id=" 
+				+ human_file_dig.getHuman_id()
+				+ ", human_name=" + human_file_dig.getEngage_resume().getHuman_name() + ", training_item=" + training_item + ", training_time=" + training_time
 				+ ", training_hour=" + training_hour + ", training_degree=" + training_degree + ", register=" + register
 				+ ", checker=" + checker + ", regist_time=" + regist_time + ", check_time=" + check_time
 				+ ", checkstatus=" + checkstatus + ", remark=" + remark + "]";
 	}
 
-	public int getTra_id() {
+	public Integer getTra_id() {
 		return tra_id;
 	}
 
-	public void setTra_id(int tra_id) {
+	public void setTra_id(Integer tra_id) {
 		this.tra_id = tra_id;
 	}
 
-	public String getMajor_kind_id() {
-		return major_kind_id;
+
+
+
+	public Human_file_dig getHuman_file_dig() {
+		return human_file_dig;
 	}
 
-	public void setMajor_kind_id(String major_kind_id) {
-		this.major_kind_id = major_kind_id;
-	}
-
-	public String getMajor_kind_name() {
-		return major_kind_name;
-	}
-
-	public void setMajor_kind_name(String major_kind_name) {
-		this.major_kind_name = major_kind_name;
-	}
-
-	public String getMajor_id() {
-		return major_id;
-	}
-
-	public void setMajor_id(String major_id) {
-		this.major_id = major_id;
-	}
-
-	public String getMajor_name() {
-		return major_name;
-	}
-
-	public void setMajor_name(String major_name) {
-		this.major_name = major_name;
-	}
-
-	public String getHuman_id() {
-		return human_id;
-	}
-
-	public void setHuman_id(String human_id) {
-		this.human_id = human_id;
-	}
-
-	public String getHuman_name() {
-		return human_name;
-	}
-
-	public void setHuman_name(String human_name) {
-		this.human_name = human_name;
+	public void setHuman_file_dig(Human_file_dig human_file_dig) {
+		this.human_file_dig = human_file_dig;
 	}
 
 	public String getTraining_item() {
@@ -107,11 +67,11 @@ public class Training implements Serializable{
 		this.training_time = training_time;
 	}
 
-	public int getTraining_hour() {
+	public Integer getTraining_hour() {
 		return training_hour;
 	}
 
-	public void setTraining_hour(int training_hour) {
+	public void setTraining_hour(Integer training_hour) {
 		this.training_hour = training_hour;
 	}
 
@@ -155,11 +115,11 @@ public class Training implements Serializable{
 		this.check_time = check_time;
 	}
 
-	public int getCheckstatus() {
+	public Integer getCheckstatus() {
 		return checkstatus;
 	}
 
-	public void setCheckstatus(int checkstatus) {
+	public void setCheckstatus(Integer checkstatus) {
 		this.checkstatus = checkstatus;
 	}
 
@@ -169,6 +129,19 @@ public class Training implements Serializable{
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	public Config_major getConfig_major() {
+		return config_major;
+	}
+
+	public void setConfig_major(Config_major config_major) {
+		this.config_major = config_major;
+	}
+
+
+	public Training() {
+		super();
 	}
 	
 	

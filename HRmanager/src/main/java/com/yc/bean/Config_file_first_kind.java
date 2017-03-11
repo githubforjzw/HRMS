@@ -6,7 +6,7 @@ public class Config_file_first_kind implements Serializable{
 
 	private static final long serialVersionUID = 8079902436537245254L;
 	
-	private int ffk_id ;
+	private Integer ffk_id ;
 	private String first_kind_id ;
 	private String first_kind_name ;
 	private String first_kind_salary_id ;
@@ -19,13 +19,16 @@ public class Config_file_first_kind implements Serializable{
 				+ first_kind_sale_id + "]";
 	}
 
-	public int getFfk_id() {
+
+	public Integer getFfk_id() {
 		return ffk_id;
 	}
 
-	public void setFfk_id(int ffk_id) {
+
+	public void setFfk_id(Integer ffk_id) {
 		this.ffk_id = ffk_id;
 	}
+
 
 	public String getFirst_kind_id() {
 		return first_kind_id;
@@ -57,6 +60,11 @@ public class Config_file_first_kind implements Serializable{
 
 	public void setFirst_kind_sale_id(String first_kind_sale_id) {
 		this.first_kind_sale_id = first_kind_sale_id;
+	}
+
+
+	public Config_file_first_kind() {
+		super();
 	}
 	
 	

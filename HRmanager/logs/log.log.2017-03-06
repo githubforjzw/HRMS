@@ -1,0 +1,175 @@
+2017-03-06 15:00:08  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 15:00:08 CST 2017]; root of context hierarchy
+2017-03-06 15:00:08  [ main:62 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 15:00:09  [ main:1071 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 15:00:12  [ main:4057 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_id,second_kind_name,register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?,?,?,?,?, ?,?,?,?, ?,?,?,?,?,?,?) 
+2017-03-06 15:00:12  [ main:4095 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-06 15:00:11.194(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), Java(String), Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-06 15:00:11.194(Timestamp)
+2017-03-06 15:08:45  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 15:08:45 CST 2017]; root of context hierarchy
+2017-03-06 15:08:45  [ main:61 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 15:08:46  [ main:663 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 15:08:46  [ main:1486 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_id,second_kind_name,register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?,?,?,?,?, ?,?,?,?, ?,?,?,?,?,?,?) 
+2017-03-06 15:08:46  [ main:1511 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-06 15:08:46.593(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), Java(String), Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-06 15:08:46.593(Timestamp)
+2017-03-06 15:16:05  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 15:16:05 CST 2017]; root of context hierarchy
+2017-03-06 15:16:05  [ main:35 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 15:16:06  [ main:462 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 15:16:06  [ main:1293 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_id,second_kind_name,register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?,?,?,?,?, ?,?,?,?, ?,?,?,?,?,?,?) 
+2017-03-06 15:16:06  [ main:1318 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-06 15:16:06.636(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), Java(String), Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-06 15:16:06.636(Timestamp)
+2017-03-06 15:21:14  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 15:21:14 CST 2017]; root of context hierarchy
+2017-03-06 15:21:14  [ main:108 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 15:21:15  [ main:935 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 15:21:16  [ main:2254 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_id,second_kind_name,register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?,?,?,?,?, ?,?,?,?, ?,?,?,?,?,?,?) 
+2017-03-06 15:21:16  [ main:2285 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-06 15:21:16.147(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), Java(String), Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-06 15:21:16.147(Timestamp)
+2017-03-06 15:27:18  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 15:27:18 CST 2017]; root of context hierarchy
+2017-03-06 15:27:18  [ main:36 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 15:27:18  [ main:370 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 15:27:19  [ main:1183 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_id,second_kind_name,register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?,?,?,?,?, ?,?,?,?, ?,?,?,?,?,?,?) 
+2017-03-06 15:27:19  [ main:1209 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-06 15:27:19.501(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), Java(String), Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-06 15:27:19.501(Timestamp)
+2017-03-06 15:32:18  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 15:32:18 CST 2017]; root of context hierarchy
+2017-03-06 15:32:18  [ main:41 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 15:32:19  [ main:402 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 15:32:20  [ main:1218 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_name, register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?, ?,?, ?,?, ?,?,?,?, ?,?,?,?,?,?,?) 
+2017-03-06 15:32:20  [ main:1243 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-06 15:32:19.753(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), Java(String), Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-06 15:32:19.753(Timestamp)
+2017-03-06 15:32:20  [ main:1268 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-06 15:43:33  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 15:43:33 CST 2017]; root of context hierarchy
+2017-03-06 15:43:33  [ main:35 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 15:43:34  [ main:383 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 15:43:34  [ main:1165 ] - [ DEBUG ]  ==>  Preparing: delete from engage_subjects where engage_subjects.content=? 
+2017-03-06 15:43:34  [ main:1189 ] - [ DEBUG ]  ==> Parameters: 世界上最强的语言(String)
+2017-03-06 15:43:34  [ main:1249 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-06 15:44:43  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 15:44:43 CST 2017]; root of context hierarchy
+2017-03-06 15:44:43  [ main:35 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 15:44:44  [ main:407 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 15:44:44  [ main:1189 ] - [ DEBUG ]  ==>  Preparing: insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_name, register,regist_time,derivation,content,key_a ,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(?, ?,?, ?,?, ?,?,?,?, ?,?,?,?,?,?,?) 
+2017-03-06 15:44:44  [ main:1220 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 京太郎(String), 2017-03-06 15:44:44.726(Timestamp), 源辰科技有限公司(String), 世界上最强的语言(String), C++(String), Java(String), Javascript(String), Ruby(String), Python(String), C++(String), 京太郎(String), 2017-03-06 15:44:44.726(Timestamp)
+2017-03-06 15:44:45  [ main:1221 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-06 16:05:49  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:05:49 CST 2017]; root of context hierarchy
+2017-03-06 16:05:49  [ main:35 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:05:50  [ main:379 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:15:35  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:15:35 CST 2017]; root of context hierarchy
+2017-03-06 16:15:35  [ main:47 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:15:35  [ main:473 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:15:36  [ main:1313 ] - [ DEBUG ]  ==>  Preparing: update engage_subjects set content=? WHERE sub_id=? 
+2017-03-06 16:15:36  [ main:1337 ] - [ DEBUG ]  ==> Parameters: 世界上最强的机械(String), 8(Integer)
+2017-03-06 16:15:36  [ main:1413 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-06 16:16:42  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:16:42 CST 2017]; root of context hierarchy
+2017-03-06 16:16:42  [ main:41 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:16:43  [ main:456 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:16:44  [ main:1441 ] - [ DEBUG ]  ==>  Preparing: update engage_subjects set key_a=? WHERE sub_id=? 
+2017-03-06 16:16:44  [ main:1465 ] - [ DEBUG ]  ==> Parameters: Scala(String), 8(Integer)
+2017-03-06 16:16:44  [ main:1466 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-06 16:17:15  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:17:15 CST 2017]; root of context hierarchy
+2017-03-06 16:17:15  [ main:43 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:17:15  [ main:538 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:17:16  [ main:1450 ] - [ DEBUG ]  ==>  Preparing: update engage_subjects set content=? WHERE sub_id=? 
+2017-03-06 16:17:16  [ main:1474 ] - [ DEBUG ]  ==> Parameters: 世界上最强的语言(String), 8(Integer)
+2017-03-06 16:17:16  [ main:1476 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-06 16:21:26  [ main:1 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:21:26 CST 2017]; root of context hierarchy
+2017-03-06 16:21:26  [ main:37 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:21:26  [ main:402 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:21:27  [ main:1178 ] - [ DEBUG ]  ==>  Preparing: update engage_subjects set first_kind_id=?, first_kind_name=?, second_kind_id=?, second_kind_name=? WHERE sub_id=? 
+2017-03-06 16:21:27  [ main:1201 ] - [ DEBUG ]  ==> Parameters: 1(String), 异类(String), 1(String), 语言类(String), 8(Integer)
+2017-03-06 16:21:27  [ main:1203 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-06 16:22:20  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:22:20 CST 2017]; root of context hierarchy
+2017-03-06 16:22:20  [ main:35 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:22:21  [ main:419 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:22:21  [ main:1242 ] - [ DEBUG ]  ==>  Preparing: update engage_subjects set first_kind_id=?, first_kind_name=?, second_kind_id=?, second_kind_name=? WHERE sub_id=? 
+2017-03-06 16:22:21  [ main:1266 ] - [ DEBUG ]  ==> Parameters: 1(String), 基础类(String), 1(String), 语言类(String), 8(Integer)
+2017-03-06 16:22:21  [ main:1268 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-06 16:28:20  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:28:20 CST 2017]; root of context hierarchy
+2017-03-06 16:28:20  [ main:45 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:28:21  [ main:392 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:28:22  [ main:1196 ] - [ DEBUG ]  ==>  Preparing: update engage_subjects set first_kind_name=? WHERE sub_id=? 
+2017-03-06 16:28:22  [ main:1220 ] - [ DEBUG ]  ==> Parameters: 蛇皮类(String), 8(Integer)
+2017-03-06 16:28:22  [ main:1221 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-06 16:28:53  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:28:53 CST 2017]; root of context hierarchy
+2017-03-06 16:28:53  [ main:41 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:28:53  [ main:443 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:28:54  [ main:1347 ] - [ DEBUG ]  ==>  Preparing: update engage_subjects set first_kind_name=? WHERE sub_id=? 
+2017-03-06 16:28:54  [ main:1376 ] - [ DEBUG ]  ==> Parameters: 基础类(String), 8(Integer)
+2017-03-06 16:28:54  [ main:1378 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-06 16:57:20  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:57:20 CST 2017]; root of context hierarchy
+2017-03-06 16:57:20  [ main:49 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:57:20  [ main:497 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:58:25  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:58:25 CST 2017]; root of context hierarchy
+2017-03-06 16:58:25  [ main:39 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:58:26  [ main:451 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:58:27  [ main:1199 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 16:58:27  [ main:1511 ] - [ DEBUG ]  ==>  Preparing: select * from engage_subjects pageStart=?,pageStart=? 
+2017-03-06 16:58:27  [ main:1538 ] - [ DEBUG ]  ==> Parameters: 1(Integer), 1(Integer)
+2017-03-06 16:59:50  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 16:59:50 CST 2017]; root of context hierarchy
+2017-03-06 16:59:50  [ main:46 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 16:59:50  [ main:445 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 16:59:51  [ main:1128 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 16:59:51  [ main:1424 ] - [ DEBUG ]  ==>  Preparing: select * from engage_subjects limit ?,? 
+2017-03-06 16:59:51  [ main:1456 ] - [ DEBUG ]  ==> Parameters: 1(Integer), 1(Integer)
+2017-03-06 16:59:51  [ main:1467 ] - [ DEBUG ]  <==      Total: 0
+2017-03-06 17:00:12  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 17:00:12 CST 2017]; root of context hierarchy
+2017-03-06 17:00:12  [ main:52 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 17:00:12  [ main:439 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 17:00:13  [ main:1107 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 17:00:13  [ main:1417 ] - [ DEBUG ]  ==>  Preparing: select * from engage_subjects limit ?,? 
+2017-03-06 17:00:13  [ main:1450 ] - [ DEBUG ]  ==> Parameters: 1(Integer), 1(Integer)
+2017-03-06 17:00:13  [ main:1463 ] - [ DEBUG ]  <==      Total: 0
+2017-03-06 17:02:32  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 17:02:32 CST 2017]; root of context hierarchy
+2017-03-06 17:02:32  [ main:45 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 17:02:32  [ main:460 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 17:02:33  [ main:1197 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 17:07:14  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 17:07:14 CST 2017]; root of context hierarchy
+2017-03-06 17:07:14  [ main:41 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 17:07:15  [ main:404 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 17:07:15  [ main:1024 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 17:07:16  [ main:1343 ] - [ DEBUG ]  ==>  Preparing: select * from engage_subjects limit ?,? 
+2017-03-06 17:07:16  [ main:1378 ] - [ DEBUG ]  ==> Parameters: 0(Integer), 1(Integer)
+2017-03-06 17:07:16  [ main:1392 ] - [ DEBUG ]  <==      Total: 1
+2017-03-06 17:07:54  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 17:07:54 CST 2017]; root of context hierarchy
+2017-03-06 17:07:54  [ main:50 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 17:07:55  [ main:461 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 17:07:55  [ main:1126 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 17:07:56  [ main:1394 ] - [ DEBUG ]  ==>  Preparing: select * from engage_subjects limit ?,? 
+2017-03-06 17:07:56  [ main:1421 ] - [ DEBUG ]  ==> Parameters: 1(Integer), 1(Integer)
+2017-03-06 17:07:56  [ main:1433 ] - [ DEBUG ]  <==      Total: 0
+2017-03-06 17:12:10  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 17:12:10 CST 2017]; root of context hierarchy
+2017-03-06 17:12:10  [ main:37 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 17:12:10  [ main:407 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 17:12:11  [ main:991 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 17:12:11  [ main:1232 ] - [ DEBUG ]  ==>  Preparing: select * from engage_subjects order by sub_id limit ?,? 
+2017-03-06 17:12:11  [ main:1259 ] - [ DEBUG ]  ==> Parameters: 0(Integer), 1(Integer)
+2017-03-06 17:12:11  [ main:1279 ] - [ DEBUG ]  <==      Total: 1
+2017-03-06 17:25:26  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 17:25:26 CST 2017]; root of context hierarchy
+2017-03-06 17:25:26  [ main:36 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 17:25:26  [ main:382 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 17:25:27  [ main:982 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 17:25:27  [ main:1240 ] - [ DEBUG ]  ==>  Preparing: select * from engage_subjects WHERE first_kind_name=?, 
+2017-03-06 17:25:27  [ main:1268 ] - [ DEBUG ]  ==> Parameters: 基础类(String)
+2017-03-06 17:26:48  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 17:26:48 CST 2017]; root of context hierarchy
+2017-03-06 17:26:48  [ main:39 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 17:26:48  [ main:435 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 17:26:49  [ main:1059 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 17:26:49  [ main:1340 ] - [ DEBUG ]  ==>  Preparing: select * from engage_subjects where first_kind_name=? 
+2017-03-06 17:26:49  [ main:1370 ] - [ DEBUG ]  ==> Parameters: 基础类(String)
+2017-03-06 17:26:49  [ main:1418 ] - [ DEBUG ]  <==      Total: 1
+2017-03-06 21:41:48  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 21:41:48 CST 2017]; root of context hierarchy
+2017-03-06 21:41:48  [ main:402 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 21:41:50  [ main:1943 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 21:41:51  [ main:2852 ] - [ WARN ]  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'baseDaoMybatisImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [beans.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\GitDefaultRepository\HRMS\HRmanager\target\classes\com\yc\mapper\EngageExamMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 113; columnNumber: 94; 必须为元素类型 "select" 声明属性 "parameter"。
+2017-03-06 21:46:10  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 21:46:10 CST 2017]; root of context hierarchy
+2017-03-06 21:46:10  [ main:40 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 21:46:11  [ main:529 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 21:46:11  [ main:1006 ] - [ WARN ]  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'baseDaoMybatisImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [beans.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\GitDefaultRepository\HRMS\HRmanager\target\classes\com\yc\mapper\EngageExamMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 113; columnNumber: 100; 必须为元素类型 "select" 声明属性 "resultMType"。
+2017-03-06 21:47:04  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 21:47:04 CST 2017]; root of context hierarchy
+2017-03-06 21:47:04  [ main:61 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 21:47:05  [ main:517 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 21:47:06  [ main:1817 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 21:47:07  [ main:2700 ] - [ DEBUG ]  ==>  Preparing: select count(*) from engage_subjects WHERE first_kind_id=? 
+2017-03-06 21:47:07  [ main:2823 ] - [ DEBUG ]  ==> Parameters: 1(String)
+2017-03-06 21:47:07  [ main:3122 ] - [ DEBUG ]  <==      Total: 1
+2017-03-06 21:48:04  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Mon Mar 06 21:48:04 CST 2017]; root of context hierarchy
+2017-03-06 21:48:04  [ main:45 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-06 21:48:05  [ main:429 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-06 21:48:05  [ main:1055 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 21:48:06  [ main:1371 ] - [ DEBUG ]  ==>  Preparing: select count(*) from engage_subjects WHERE first_kind_id=? 
+2017-03-06 21:48:06  [ main:1397 ] - [ DEBUG ]  ==> Parameters: 1(String)
+2017-03-06 21:48:06  [ main:1437 ] - [ DEBUG ]  <==      Total: 1
+2017-03-06 21:48:06  [ main:1443 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-06 21:48:06  [ main:1444 ] - [ DEBUG ]  ==>  Preparing: select count(*) from engage_subjects WHERE second_kind_id=? 
+2017-03-06 21:48:06  [ main:1444 ] - [ DEBUG ]  ==> Parameters: 1(String)
+2017-03-06 21:48:06  [ main:1445 ] - [ DEBUG ]  <==      Total: 1

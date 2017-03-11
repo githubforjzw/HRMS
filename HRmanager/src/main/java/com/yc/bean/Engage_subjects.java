@@ -7,7 +7,8 @@ public class Engage_subjects implements Serializable{
 
 	private static final long serialVersionUID = -5814234088555871841L;
 
-	private int sub_id ;
+
+	private Integer sub_id ;
 	private Config_question_second_kind config_question_second_kind;
 	private String register ;
 	private Timestamp regist_time  ;
@@ -21,13 +22,10 @@ public class Engage_subjects implements Serializable{
 	private String correct_key ;
 	private String changer  ;
 	private Timestamp change_time ;
-	public Engage_subjects() {
-		super();
-	}
-	public int getSub_id() {
+	public Integer getSub_id() {
 		return sub_id;
 	}
-	public void setSub_id(int sub_id) {
+	public void setSub_id(Integer sub_id) {
 		this.sub_id = sub_id;
 	}
 	public Config_question_second_kind getConfig_question_second_kind() {
@@ -108,16 +106,18 @@ public class Engage_subjects implements Serializable{
 	public void setChange_time(Timestamp change_time) {
 		this.change_time = change_time;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 	@Override
 	public String toString() {
-		return "Engage_subjects [sub_id=" + sub_id + ", config_question_second_kind=" + config_question_second_kind + ", register=" + register
-				+ ", regist_time=" + regist_time + ", derivation=" + derivation + ", content=" + content + ", key_a="
-				+ key_a + ", key_b=" + key_b + ", key_c=" + key_c + ", key_d=" + key_d + ", key_e=" + key_e
-				+ ", correct_key=" + correct_key + ", changer=" + changer + ", change_time=" + change_time + "]";
+		return "Engage_subjects [sub_id=" + sub_id + ", config_question_second_kind=" + config_question_second_kind
+				+ ", register=" + register + ", regist_time=" + regist_time + ", derivation=" + derivation
+				+ ", content=" + content + ", key_a=" + key_a + ", key_b=" + key_b + ", key_c=" + key_c + ", key_d="
+				+ key_d + ", key_e=" + key_e + ", correct_key=" + correct_key + ", changer=" + changer
+				+ ", change_time=" + change_time + "]";
 	}
+	public Engage_subjects() {
+		super();
+	}
+	
 	
 	
 }

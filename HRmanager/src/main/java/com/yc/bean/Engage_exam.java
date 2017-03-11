@@ -9,10 +9,12 @@ public class Engage_exam implements Serializable{
 
 	private Integer exa_id ;
 	private String exam_number;
-	private Config_major config_major;
-	private String register;
+	private Config_major Config_major;
+	private String register ;
+
 	private Timestamp regist_time ;
 	private Integer limite_time ;
+	
 	
 	public Engage_exam() {
 		super();
@@ -30,10 +32,10 @@ public class Engage_exam implements Serializable{
 		this.exam_number = exam_number;
 	}
 	public Config_major getConfig_major() {
-		return config_major;
+		return Config_major;
 	}
 	public void setConfig_major(Config_major config_major) {
-		this.config_major = config_major;
+		Config_major = config_major;
 	}
 	public String getRegister() {
 		return register;
@@ -55,14 +57,9 @@ public class Engage_exam implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Engage_exam [exa_id=" + exa_id + ", exam_number=" + exam_number + ", config_major=" + config_major
+		return "Engage_exam [exa_id=" + exa_id + ", exam_number=" + exam_number + ", Config_major=" + Config_major
 				+ ", register=" + register + ", regist_time=" + regist_time + ", limite_time=" + limite_time + "]";
 	}
-	
-	
-	
-	
-	
 	
 	
 }

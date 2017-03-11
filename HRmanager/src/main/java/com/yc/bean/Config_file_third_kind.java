@@ -6,19 +6,28 @@ public class Config_file_third_kind implements Serializable{
 
 	private static final long serialVersionUID = -4094591422602839620L;
 
-	private int ftk_id ;
+
+	private Integer ftk_id ;
+
 	private Config_file_second_kind config_file_second_kind;
 	private String third_kind_id ;
 	private String third_kind_name ;
 	private String third_kind_sale_id ;
 	private String third_kind_is_retail ;
-	public Config_file_third_kind() {
+	public Config_file_third_kind(Integer ftk_id, Config_file_second_kind config_file_second_kind, String third_kind_id,
+			String third_kind_name, String third_kind_sale_id, String third_kind_is_retail) {
 		super();
+		this.ftk_id = ftk_id;
+		this.config_file_second_kind = config_file_second_kind;
+		this.third_kind_id = third_kind_id;
+		this.third_kind_name = third_kind_name;
+		this.third_kind_sale_id = third_kind_sale_id;
+		this.third_kind_is_retail = third_kind_is_retail;
 	}
-	public int getFtk_id() {
+	public Integer getFtk_id() {
 		return ftk_id;
 	}
-	public void setFtk_id(int ftk_id) {
+	public void setFtk_id(Integer ftk_id) {
 		this.ftk_id = ftk_id;
 	}
 	public Config_file_second_kind getConfig_file_second_kind() {
@@ -57,6 +66,7 @@ public class Config_file_third_kind implements Serializable{
 				+ ", third_kind_id=" + third_kind_id + ", third_kind_name=" + third_kind_name + ", third_kind_sale_id="
 				+ third_kind_sale_id + ", third_kind_is_retail=" + third_kind_is_retail + "]";
 	}
+	
 	
 	
 }

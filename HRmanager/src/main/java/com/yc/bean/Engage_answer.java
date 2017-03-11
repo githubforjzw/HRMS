@@ -7,45 +7,34 @@ public class Engage_answer implements Serializable{
 
 	private static final long serialVersionUID = -4510970022234026350L;
 
-	private int ans_id ;
-	private String answer_number ;
+	private Integer ans_id ;
+	private Engage_answer_details engage_answer_details;
 	private String exam_number ;
-	private int resume_id ;
-	private int interview_id  ;
-	private String human_name ;
-	private String human_idcard ;
-	private String major_kind_id ;
-	private String major_kind_name ;
-	private String major_id ;
-	private String major_name;
+	private Integer resume_id ;
+	private Integer Integererview_id  ;
+	private Human_file_dig human_file_dig;
+	private Config_major config_major;
 	private Timestamp test_time ;
 	private String use_time ;
-	private Number total_point ;
+	private Number total_poInteger ;
 	
 	@Override
 	public String toString() {
-		return "Engage_answer [ans_id=" + ans_id + ", answer_number=" + answer_number + ", exam_number=" + exam_number
-				+ ", resume_id=" + resume_id + ", interview_id=" + interview_id + ", human_name=" + human_name
-				+ ", human_idcard=" + human_idcard + ", major_kind_id=" + major_kind_id + ", major_kind_name="
-				+ major_kind_name + ", major_id=" + major_id + ", major_name=" + major_name + ", test_time=" + test_time
-				+ ", use_time=" + use_time + ", total_point=" + total_point + "]";
+		return "Engage_answer [ans_id=" + ans_id + ", answer_number=" + engage_answer_details.getAnswer_number() + ", exam_number=" + exam_number
+				+ ", resume_id=" + resume_id + ", Integererview_id=" + Integererview_id + ", human_name=" + human_file_dig.getEngage_resume().getHuman_name()
+				+ ", human_idcard=" + human_file_dig.getEngage_resume().getHuman_idcard() + ", major_kind_id=" + config_major.getConfig_major_kind().getMajor_kind_id() + ", major_kind_name="
+				+ config_major.getConfig_major_kind().getMajor_kind_name() + ", major_id=" + config_major.getMajor_id() + ", major_name=" + config_major.getMajor_name() + ", test_time=" + test_time
+				+ ", use_time=" + use_time + ", total_poInteger=" + total_poInteger + "]";
 	}
 
-	public int getAns_id() {
+	public Integer getAns_id() {
 		return ans_id;
 	}
 
-	public void setAns_id(int ans_id) {
+	public void setAns_id(Integer ans_id) {
 		this.ans_id = ans_id;
 	}
 
-	public String getAnswer_number() {
-		return answer_number;
-	}
-
-	public void setAnswer_number(String answer_number) {
-		this.answer_number = answer_number;
-	}
 
 	public String getExam_number() {
 		return exam_number;
@@ -55,69 +44,22 @@ public class Engage_answer implements Serializable{
 		this.exam_number = exam_number;
 	}
 
-	public int getResume_id() {
+	public Integer getResume_id() {
 		return resume_id;
 	}
 
-	public void setResume_id(int resume_id) {
+	public void setResume_id(Integer resume_id) {
 		this.resume_id = resume_id;
 	}
 
-	public int getInterview_id() {
-		return interview_id;
+	public Integer getIntegererview_id() {
+		return Integererview_id;
 	}
 
-	public void setInterview_id(int interview_id) {
-		this.interview_id = interview_id;
+	public void setIntegererview_id(Integer Integererview_id) {
+		this.Integererview_id = Integererview_id;
 	}
 
-	public String getHuman_name() {
-		return human_name;
-	}
-
-	public void setHuman_name(String human_name) {
-		this.human_name = human_name;
-	}
-
-	public String getHuman_idcard() {
-		return human_idcard;
-	}
-
-	public void setHuman_idcard(String human_idcard) {
-		this.human_idcard = human_idcard;
-	}
-
-	public String getMajor_kind_id() {
-		return major_kind_id;
-	}
-
-	public void setMajor_kind_id(String major_kind_id) {
-		this.major_kind_id = major_kind_id;
-	}
-
-	public String getMajor_kind_name() {
-		return major_kind_name;
-	}
-
-	public void setMajor_kind_name(String major_kind_name) {
-		this.major_kind_name = major_kind_name;
-	}
-
-	public String getMajor_id() {
-		return major_id;
-	}
-
-	public void setMajor_id(String major_id) {
-		this.major_id = major_id;
-	}
-
-	public String getMajor_name() {
-		return major_name;
-	}
-
-	public void setMajor_name(String major_name) {
-		this.major_name = major_name;
-	}
 
 	public Timestamp getTest_time() {
 		return test_time;
@@ -135,12 +77,42 @@ public class Engage_answer implements Serializable{
 		this.use_time = use_time;
 	}
 
-	public Number getTotal_point() {
-		return total_point;
+	public Number getTotal_poInteger() {
+		return total_poInteger;
 	}
 
-	public void setTotal_point(Number total_point) {
-		this.total_point = total_point;
+	public void setTotal_poInteger(Number total_poInteger) {
+		this.total_poInteger = total_poInteger;
+	}
+
+	public Config_major getConfig_major() {
+		return config_major;
+	}
+
+	public void setConfig_major(Config_major config_major) {
+		this.config_major = config_major;
+	}
+
+	public Engage_answer_details getEngage_answer_details() {
+		return engage_answer_details;
+	}
+
+	public void setEngage_answer_details(Engage_answer_details engage_answer_details) {
+		this.engage_answer_details = engage_answer_details;
+	}
+
+
+	public Human_file_dig getHuman_file_dig() {
+		return human_file_dig;
+	}
+
+	public void setHuman_file_dig(Human_file_dig human_file_dig) {
+		this.human_file_dig = human_file_dig;
+	}
+
+
+	public Engage_answer() {
+		super();
 	}
 	
 	

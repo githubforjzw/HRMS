@@ -1,15 +1,17 @@
 
 /* 创建新表  user 。                                                                               */
 /*  users  : 用户表                                                                               */
-/* 	 user_id  : 主键，自动增长列                                                                      */
-/* 	 user_name  : 用户名                                                                         */
-/* 	 user_true_name  : 真实姓名                                                                   */
-/* 	 user_password  : 密码                                                                      */  
+/* 	 u_id  : 主键，自动增长列                                                                      */
+/* 	 u_name  : 用户名                                                                         */
+/* 	 u_true_name  : 真实姓名                                                                   */
+/* 	 u_password  : 密码                                                                      */  
+/* 	 u_role  : 角色管理                                                                     */ 
 create table users ( 
 	u_id int primary key auto_increment,
 	u_name varchar(60),
 	u_true_name varchar(60),
-	u_password varchar(60)  
+	u_password varchar(60) ,
+	u_role varchar(60)
 )engine=MYISAM character set utf8;
 
 insert into users(u_name,u_true_name,u_password) values('better_admin','zhangsan','123456');
@@ -93,16 +95,6 @@ insert into config_file_third_kind(first_kind_id,first_kind_name,second_kind_id,
 select * from config_file_third_kind;
 drop table config_file_third_kind;
 
-/* 创建新表  config_question_first_kind 。                                                         */
-/*  config_question_first_kind  : 试题一级分类设置                                                    */
-/* 	 qfk_id  : 主键，自动增长列                                                                       */
-/* 	 first_kind_id  : 试题一级分类编号                                                                */
-/* 	 first_kind_name  : 试题一级分类名称                                                              */  
-create table config_question_first_kind ( 
-	qfk_id int primary key auto_increment,
-	first_kind_id var char(20)   ,
-	first_kind_name varchar(60)   
-)engine=MYISAM character set utf8;
 
 insert into config_question_first_kind(first_kind_id,first_kind_name) values('1','基础类');
 insert into config_question_first_kind(first_kind_id,first_kind_name) values('2','技术类');
@@ -281,6 +273,7 @@ insert into config_primary_key(primary_key_table,primary_key,key_name,primary_ke
 /*  config_major_kind  : 职位分类设置                                                               */
 /* 	 mfk_id  : 主键，自动增长列                                                                       */
 /* 	 major_kind_id  : 职位分类编号                                                                  */
+/* 	 major_kind_name  : 职位分类名称                                                                */  
 /* 	 major_kind_name  : 职分类名称                                                                */  
 create table config_major_kind ( 
 	mfk_id int primary key auto_increment,
@@ -316,14 +309,14 @@ create table config_major (
 select * from config_major;
 drop table config_major;
 
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('1','销售','01','区域经理',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('1','销售','02','总经理',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('2','软件开发','01','项目经理',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('2','软件开发','02','程序员',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('3','人力资源','01','人事经理',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('3','人力资源','02','专员',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('4','生产部','01','主任',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('4','生产部','02','技术工人',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('1','销售','1','区域经理',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('1','销售','2','总经理',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('2','软件开发','1','项目经理',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('2','软件开发','2','程序员',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('3','人力资源','1','人事经理',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('3','人力资源','2','专员',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('4','生产部','1','主任',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('4','生产部','2','技术工人',0);
 
 
 /* 创建新表  HumanFile_dig 。                                                                     */
@@ -528,7 +521,7 @@ alter table  human_file_dig
 /* 	 lastly_change_time  : 档案最近更改时间                                                           */
 /* 	 delete_time  : 档案删除时间                                                                    */
 /* 	 recovery_time  : 档案恢复时间                                                                  */
-/* 	 human_file_status  : 档案状态                       1:完整    0：不完整                                          */  
+/* 	 human_file_status  : 档案状态                     1:存在  0：删除                                          */  
 create table  human_file  ( 
 	 huf_id  int primary key auto_increment,
 	 human_id  varchar(30)  ,
@@ -850,9 +843,9 @@ alter table  major_change
 /*  salary_grant  : 薪酬发放登记表                                                                   */
 /* 	 sgr_id  : 主键，自动增长列                                                                       */
 /* 	 salary_grant_id  : 薪酬发放编号                                                                */
-/* 	 salary_standard_id  : 薪酬标准单编号                                                            */
+/* 	 salary_standard_id  : 薪酬标准单位编号                                                            */
 /* 	 first_kind_id  : 一级机构编号                                                                  */
-/* 	 first_kind_name  : 一级机构名称                                                                */
+/* 	 first_kind_name  : 一级机构名称                                        s                        */
 /* 	 second_kind_id  : 二级机构编号                                                                 */
 /* 	 second_kind_name  : 二级机构名称                                                               */
 /* 	 third_kind_id  : 三级机构编号                                                                  */
@@ -976,6 +969,47 @@ alter table  engage_major_release
 	add constraint  engage_major_release_PK  primary key ( mre_id )   
 
 
+	
+/* 创建新表  config_question_first_kind 。                                                         */
+/*  config_question_first_kind  : 试题一级分类设置                                                    */
+/* 	 qfk_id  : 主键，自动增长列                                                                       */
+/* 	 first_kind_id  : 试题一级分类编号                                                                */
+/* 	 first_kind_name  : 试题一级分类名称                                                              */  
+create table config_question_first_kind ( 
+	qfk_id int primary key auto_increment,
+	first_kind_id varchar(20)   ,
+	first_kind_name varchar(60)   
+)engine=MYISAM character set utf8;
+
+insert into config_question_first_kind(first_kind_id,first_kind_name) values('1','基础类');
+insert into config_question_first_kind(first_kind_id,first_kind_name) values('2','技术类');
+select * from config_question_first_kind;
+drop table config_question_first_kind;
+
+
+/* 创建新表  config_question_second_kind 。                                                        */
+/*  config_question_second_kind  : 试题二级分类设置                                                   */
+/* 	 qsk_id  : 主键，自动增长列                                                                       */
+/* 	 first_kind_id  : 试题一级分类编号                                                                */
+/* 	 first_kind_name  : 试题一级分类名称                                                              */
+/* 	 second_kind_id  : 试题二级分类编号                                                               */
+/* 	 second_kind_name  : 试题二级分类名称                                                             */  
+create table config_question_second_kind ( 
+	qsk_id int primary key auto_increment,
+	first_kind_id varchar(20)   ,
+	first_kind_name varchar(60)   ,
+	second_kind_id varchar(20)   ,
+	second_kind_name varchar(60)   
+)engine=MYISAM character set utf8;
+
+insert into config_question_second_kind(first_kind_id,first_kind_name,second_kind_id,second_kind_name) values('1','基础类','1','语言类');
+insert into config_question_second_kind(first_kind_id,first_kind_name,second_kind_id,second_kind_name) values('1','基础类','2','管理类');
+insert into config_question_second_kind(first_kind_id,first_kind_name,second_kind_id,second_kind_name) values('2','技术类','1','软件开发类');
+insert into config_question_second_kind(first_kind_id,first_kind_name,second_kind_id,second_kind_name) values('2','技术类','2','生物制药类');
+select * from config_question_second_kind;
+drop table config_question_second_kind;
+	
+	
 
 /* 创建新表  engage_exam_details 。                                                                */
 /*  engage_exam_details  : 试卷详细信息                                                             */
@@ -1166,8 +1200,8 @@ alter table  engage_subjects
 /* 	 human_major_id  : 职位编号                                                                   */
 /* 	 human_major_name  : 职位名称                                                                 */
 /* 	 human_telephone  : 电话号码                                                                  */
-/* 	 human_homephone  : 家庭电话                                                                  */
 /* 	 human_mobilephone  : 手机                                                                  */
+/*	 human_qq	:qq										*/
 /* 	 human_email  : Email                                                                     */
 /* 	 human_hobby  : 兴趣爱好                                                                      */
 /* 	 human_specility  : 特长                                                                    */
@@ -1218,8 +1252,8 @@ create table  engage_resume  (
 	 human_major_id  varchar(30)  ,
 	 human_major_name  varchar(60)  ,
 	 human_telephone  varchar(60)  ,
-	 human_homephone  varchar(60)  ,
 	 human_mobilephone  varchar(60)  ,
+	 human_qq varchar(12) ,
 	 human_email  varchar(60)  ,
 	 human_hobby  varchar(200)  ,
 	 human_specility  varchar(200)  ,
@@ -1263,6 +1297,19 @@ create table  engage_resume  (
 
 select * from engage_resume;
 drop table engage_resume;
+
+insert into engage_resume(human_name ,engage_type,human_address,human_postcode,human_major_kind_id,
+	human_major_kind_name,human_major_id,human_major_name,human_telephone,human_mobilephone,human_qq,human_email,
+	human_hobby,human_specility,human_sex,human_religion,human_party,human_nationality,human_race,human_birthday,
+	human_age,human_educated_degree,human_educated_years,human_educated_major,human_college,human_idcard,human_birthplace,
+	demand_salary_standard,human_history_records,remark,recomandation,human_picture,attachment_name,check_status,
+	register,regist_time,checker,check_time,interview_status,total_points,test_amount,test_checker,test_check_time,
+	pass_register,pass_regist_time,pass_checker,pass_check_time,pass_check_status,pass_checkComment,pass_passComment) 
+value ( '张三' , '社招', '湖南','123456','1','销售','1','区域经理','12345678901','12345678901','123456789',
+		'123456789@qq.com','玩游戏','玩','男','佛教','团员','中国','汉族','1999-9-9',20,'本科',16,'计算机','湖南工学院',
+		'123456789123456789','湖南','6000','无','无','可以录用','照片无','档案附件无',0,'pt',now(),'ppt',now(),
+		1,'666',1,'zs',now(),'ls',now(),'ww',now(),1,'请求录用','批准');
+
 
 alter table  engage_resume 
 	add constraint  engage_resume_PK  primary key ( res_id )   

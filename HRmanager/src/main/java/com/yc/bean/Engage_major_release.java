@@ -7,18 +7,10 @@ public class Engage_major_release implements Serializable{
 
 	private static final long serialVersionUID = 4085024041627267717L;
 
-	private int mre_id ;
-	private String first_kind_id ;
-	private String first_kind_name ;
-	private String second_kind_id ;
-	private String second_kind_name;
-	private String third_kind_id ;
-	private String third_kind_name ;
-	private String major_kind_id  ;
-	private String major_kind_name ;
-	private String major_id ;
-	private String major_name ;
-	private int human_amount ;
+	private Integer mre_id ;
+	private Config_file_third_kind config_file_third_kind;
+	private Config_major config_major;
+	private Integer human_amount ;
 	private String engage_type ;
 	private Timestamp deadline ;
 	private String register;
@@ -30,109 +22,48 @@ public class Engage_major_release implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Engage_major_release [mre_id=" + mre_id + ", first_kind_id=" + first_kind_id + ", first_kind_name="
-				+ first_kind_name + ", second_kind_id=" + second_kind_id + ", second_kind_name=" + second_kind_name
-				+ ", third_kind_id=" + third_kind_id + ", third_kind_name=" + third_kind_name + ", major_kind_id="
-				+ major_kind_id + ", major_kind_name=" + major_kind_name + ", major_id=" + major_id + ", major_name="
-				+ major_name + ", human_amount=" + human_amount + ", engage_type=" + engage_type + ", deadline="
+		return "Engage_major_release [mre_id=" + mre_id + ", first_kind_id=" + config_file_third_kind.getConfig_file_second_kind().getConfig_file_first_kind().getFirst_kind_id() 
+				+ ", first_kind_name=" + config_file_third_kind.getConfig_file_second_kind().getConfig_file_first_kind().getFirst_kind_name() 
+				+ ", second_kind_id=" + config_file_third_kind.getConfig_file_second_kind().getSecond_kind_id() + ", second_kind_name=" + config_file_third_kind.getConfig_file_second_kind().getSecond_kind_name()
+				+ ", third_kind_id=" + config_file_third_kind.getThird_kind_id() + ", third_kind_name=" + config_file_third_kind.getThird_kind_name() + ", major_kind_id="
+				+ config_major.getConfig_major_kind().getMajor_kind_id() + ", major_kind_name=" + config_major.getConfig_major_kind().getMajor_kind_name() 
+				+ ", major_id=" + config_major.getMajor_id() + ", major_name="
+				+ config_major.getMajor_name() + ", human_amount=" + human_amount + ", engage_type=" + engage_type + ", deadline="
 				+ deadline + ", register=" + register + ", changer=" + changer + ", regist_time=" + regist_time
 				+ ", change_time=" + change_time + ", major_describe=" + major_describe + ", engage_required="
 				+ engage_required + "]";
 	}
 
-	public int getMre_id() {
+	public Integer getMre_id() {
 		return mre_id;
 	}
 
-	public void setMre_id(int mre_id) {
+	public void setMre_id(Integer mre_id) {
 		this.mre_id = mre_id;
 	}
 
-	public String getFirst_kind_id() {
-		return first_kind_id;
+
+	public Config_file_third_kind getConfig_file_third_kind() {
+		return config_file_third_kind;
 	}
 
-	public void setFirst_kind_id(String first_kind_id) {
-		this.first_kind_id = first_kind_id;
+	public void setConfig_file_third_kind(Config_file_third_kind config_file_third_kind) {
+		this.config_file_third_kind = config_file_third_kind;
 	}
 
-	public String getFirst_kind_name() {
-		return first_kind_name;
+	public Config_major getConfig_major() {
+		return config_major;
 	}
 
-	public void setFirst_kind_name(String first_kind_name) {
-		this.first_kind_name = first_kind_name;
+	public void setConfig_major(Config_major config_major) {
+		this.config_major = config_major;
 	}
 
-	public String getSecond_kind_id() {
-		return second_kind_id;
-	}
-
-	public void setSecond_kind_id(String second_kind_id) {
-		this.second_kind_id = second_kind_id;
-	}
-
-	public String getSecond_kind_name() {
-		return second_kind_name;
-	}
-
-	public void setSecond_kind_name(String second_kind_name) {
-		this.second_kind_name = second_kind_name;
-	}
-
-	public String getThird_kind_id() {
-		return third_kind_id;
-	}
-
-	public void setThird_kind_id(String third_kind_id) {
-		this.third_kind_id = third_kind_id;
-	}
-
-	public String getThird_kind_name() {
-		return third_kind_name;
-	}
-
-	public void setThird_kind_name(String third_kind_name) {
-		this.third_kind_name = third_kind_name;
-	}
-
-	public String getMajor_kind_id() {
-		return major_kind_id;
-	}
-
-	public void setMajor_kind_id(String major_kind_id) {
-		this.major_kind_id = major_kind_id;
-	}
-
-	public String getMajor_kind_name() {
-		return major_kind_name;
-	}
-
-	public void setMajor_kind_name(String major_kind_name) {
-		this.major_kind_name = major_kind_name;
-	}
-
-	public String getMajor_id() {
-		return major_id;
-	}
-
-	public void setMajor_id(String major_id) {
-		this.major_id = major_id;
-	}
-
-	public String getMajor_name() {
-		return major_name;
-	}
-
-	public void setMajor_name(String major_name) {
-		this.major_name = major_name;
-	}
-
-	public int getHuman_amount() {
+	public Integer getHuman_amount() {
 		return human_amount;
 	}
 
-	public void setHuman_amount(int human_amount) {
+	public void setHuman_amount(Integer human_amount) {
 		this.human_amount = human_amount;
 	}
 
@@ -198,6 +129,28 @@ public class Engage_major_release implements Serializable{
 
 	public void setEngage_required(String engage_required) {
 		this.engage_required = engage_required;
+	}
+
+	public Engage_major_release(Integer mre_id, Config_file_third_kind config_file_third_kind, Config_major config_major,
+			Integer human_amount, String engage_type, Timestamp deadline, String register, String changer,
+			Timestamp regist_time, Timestamp change_time, String major_describe, String engage_required) {
+		super();
+		this.mre_id = mre_id;
+		this.config_file_third_kind = config_file_third_kind;
+		this.config_major = config_major;
+		this.human_amount = human_amount;
+		this.engage_type = engage_type;
+		this.deadline = deadline;
+		this.register = register;
+		this.changer = changer;
+		this.regist_time = regist_time;
+		this.change_time = change_time;
+		this.major_describe = major_describe;
+		this.engage_required = engage_required;
+	}
+
+	public Engage_major_release() {
+		super();
 	}
 	
 	

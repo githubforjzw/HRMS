@@ -6,18 +6,15 @@ public class Config_major implements Serializable{
 
 	private static final long serialVersionUID = 6060666461814452078L;
 
-	private int mak_id ;
+	private Integer mak_id ;
 	private Config_major_kind config_major_kind;
 	private String major_id ;
 	private String major_name ;
-	private int test_amount ;
-	public Config_major() {
-		super();
-	}
-	public int getMak_id() {
+	private Integer test_amount ;
+	public Integer getMak_id() {
 		return mak_id;
 	}
-	public void setMak_id(int mak_id) {
+	public void setMak_id(Integer mak_id) {
 		this.mak_id = mak_id;
 	}
 	public Config_major_kind getConfig_major_kind() {
@@ -38,11 +35,14 @@ public class Config_major implements Serializable{
 	public void setMajor_name(String major_name) {
 		this.major_name = major_name;
 	}
-	public int getTest_amount() {
+	public Integer getTest_amount() {
 		return test_amount;
 	}
-	public void setTest_amount(int test_amount) {
+	public void setTest_amount(Integer test_amount) {
 		this.test_amount = test_amount;
+	}
+	public Config_major() {
+		super();
 	}
 	@Override
 	public String toString() {

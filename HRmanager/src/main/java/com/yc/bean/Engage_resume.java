@@ -1,25 +1,22 @@
 package com.yc.bean;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.text.DecimalFormat;
 
 public class Engage_resume implements Serializable{
 
 	private static final long serialVersionUID = -4303686874356624513L;
 
-	private int res_id ;
+	private Integer res_id ;
 	private String human_name ;
 	private String engage_type ;
 	private String human_address ;
 	private String human_postcode ;
-	private String human_major_kind_id ;
-	private String human_major_kind_name ;
-	private String human_major_id ;
-	private String human_major_name ;
+	private Config_major config_major;
 	private String human_telephone ;
-	private String human_homephone ;
 	private String human_mobilephone ;
+	private String human_qq;
 	private String human_email ;
 	private String human_hobby ;
 	private String human_specility ;
@@ -29,9 +26,9 @@ public class Engage_resume implements Serializable{
 	private String human_nationality ;
 	private String human_race ;
 	private Timestamp human_birthday  ;
-	private int human_age ;
+	private Integer human_age ;
 	private String human_educated_degree;
-	private int human_educated_years  ;
+	private Integer human_educated_years  ;
 	private String human_educated_major ;
 	private String human_college  ;
 	private String human_idcard ;
@@ -42,54 +39,55 @@ public class Engage_resume implements Serializable{
 	private String recomandation ;
 	private String human_picture  ;
 	private String attachment_name ;
-	private int check_status ;
+	private Integer check_status ;
 	private String register ;
 	private Timestamp regist_time ;
 	private String checker ;
 	private Timestamp check_time  ;
-	private int interview_status ;
-	private DecimalFormat total_points ;
-	private int test_amount ;
+	private Integer Integererview_status ;
+	private BigDecimal total_poIntegers ;
+	private Integer test_amount ;
 	private String test_checker ;
 	private Timestamp test_check_time ;
 	private String pass_register ;
 	private Timestamp pass_regist_time ;
 	private String pass_checker  ;
 	private Timestamp pass_check_time ;
-	private int pass_check_status;
+	private Integer pass_check_status;
 	private String pass_checkComment  ;
 	private String pass_passComment ;
 	
+
+
 	@Override
 	public String toString() {
 		return "Engage_resume [res_id=" + res_id + ", human_name=" + human_name + ", engage_type=" + engage_type
-				+ ", human_address=" + human_address + ", human_postcode=" + human_postcode + ", human_major_kind_id="
-				+ human_major_kind_id + ", human_major_kind_name=" + human_major_kind_name + ", human_major_id="
-				+ human_major_id + ", human_major_name=" + human_major_name + ", human_telephone=" + human_telephone
-				+ ", human_homephone=" + human_homephone + ", human_mobilephone=" + human_mobilephone + ", human_email="
-				+ human_email + ", human_hobby=" + human_hobby + ", human_specility=" + human_specility + ", human_sex="
-				+ human_sex + ", human_religion=" + human_religion + ", human_party=" + human_party
-				+ ", human_nationality=" + human_nationality + ", human_race=" + human_race + ", human_birthday="
-				+ human_birthday + ", human_age=" + human_age + ", human_educated_degree=" + human_educated_degree
-				+ ", human_educated_years=" + human_educated_years + ", human_educated_major=" + human_educated_major
-				+ ", human_college=" + human_college + ", human_idcard=" + human_idcard + ", human_birthplace="
-				+ human_birthplace + ", demand_salary_standard=" + demand_salary_standard + ", human_history_records="
+				+ ", human_address=" + human_address + ", human_postcode=" + human_postcode + ", config_major="
+				+ config_major + ", human_telephone=" + human_telephone + ", human_mobilephone=" + human_mobilephone
+				+ ", human_qq=" + human_qq + ", human_email=" + human_email + ", human_hobby=" + human_hobby
+				+ ", human_specility=" + human_specility + ", human_sex=" + human_sex + ", human_religion="
+				+ human_religion + ", human_party=" + human_party + ", human_nationality=" + human_nationality
+				+ ", human_race=" + human_race + ", human_birthday=" + human_birthday + ", human_age=" + human_age
+				+ ", human_educated_degree=" + human_educated_degree + ", human_educated_years=" + human_educated_years
+				+ ", human_educated_major=" + human_educated_major + ", human_college=" + human_college
+				+ ", human_idcard=" + human_idcard + ", human_birthplace=" + human_birthplace
+				+ ", demand_salary_standard=" + demand_salary_standard + ", human_history_records="
 				+ human_history_records + ", remark=" + remark + ", recomandation=" + recomandation + ", human_picture="
 				+ human_picture + ", attachment_name=" + attachment_name + ", check_status=" + check_status
 				+ ", register=" + register + ", regist_time=" + regist_time + ", checker=" + checker + ", check_time="
-				+ check_time + ", interview_status=" + interview_status + ", total_points=" + total_points
-				+ ", test_amount=" + test_amount + ", test_checker=" + test_checker + ", test_check_time="
-				+ test_check_time + ", pass_register=" + pass_register + ", pass_regist_time=" + pass_regist_time
-				+ ", pass_checker=" + pass_checker + ", pass_check_time=" + pass_check_time + ", pass_check_status="
-				+ pass_check_status + ", pass_checkComment=" + pass_checkComment + ", pass_passComment="
-				+ pass_passComment + "]";
+				+ check_time + ", Integererview_status=" + Integererview_status + ", total_poIntegers="
+				+ total_poIntegers + ", test_amount=" + test_amount + ", test_checker=" + test_checker
+				+ ", test_check_time=" + test_check_time + ", pass_register=" + pass_register + ", pass_regist_time="
+				+ pass_regist_time + ", pass_checker=" + pass_checker + ", pass_check_time=" + pass_check_time
+				+ ", pass_check_status=" + pass_check_status + ", pass_checkComment=" + pass_checkComment
+				+ ", pass_passComment=" + pass_passComment + "]";
 	}
 
-	public int getRes_id() {
+	public Integer getRes_id() {
 		return res_id;
 	}
 
-	public void setRes_id(int res_id) {
+	public void setRes_id(Integer res_id) {
 		this.res_id = res_id;
 	}
 
@@ -125,36 +123,12 @@ public class Engage_resume implements Serializable{
 		this.human_postcode = human_postcode;
 	}
 
-	public String getHuman_major_kind_id() {
-		return human_major_kind_id;
+	public Config_major getConfig_major() {
+		return config_major;
 	}
 
-	public void setHuman_major_kind_id(String human_major_kind_id) {
-		this.human_major_kind_id = human_major_kind_id;
-	}
-
-	public String getHuman_major_kind_name() {
-		return human_major_kind_name;
-	}
-
-	public void setHuman_major_kind_name(String human_major_kind_name) {
-		this.human_major_kind_name = human_major_kind_name;
-	}
-
-	public String getHuman_major_id() {
-		return human_major_id;
-	}
-
-	public void setHuman_major_id(String human_major_id) {
-		this.human_major_id = human_major_id;
-	}
-
-	public String getHuman_major_name() {
-		return human_major_name;
-	}
-
-	public void setHuman_major_name(String human_major_name) {
-		this.human_major_name = human_major_name;
+	public void setConfig_major(Config_major config_major) {
+		this.config_major = config_major;
 	}
 
 	public String getHuman_telephone() {
@@ -165,20 +139,21 @@ public class Engage_resume implements Serializable{
 		this.human_telephone = human_telephone;
 	}
 
-	public String getHuman_homephone() {
-		return human_homephone;
-	}
-
-	public void setHuman_homephone(String human_homephone) {
-		this.human_homephone = human_homephone;
-	}
-
 	public String getHuman_mobilephone() {
 		return human_mobilephone;
 	}
 
 	public void setHuman_mobilephone(String human_mobilephone) {
 		this.human_mobilephone = human_mobilephone;
+	}
+
+
+	public String getHuman_qq() {
+		return human_qq;
+	}
+
+	public void setHuman_qq(String human_qq) {
+		this.human_qq = human_qq;
 	}
 
 	public String getHuman_email() {
@@ -253,11 +228,11 @@ public class Engage_resume implements Serializable{
 		this.human_birthday = human_birthday;
 	}
 
-	public int getHuman_age() {
+	public Integer getHuman_age() {
 		return human_age;
 	}
 
-	public void setHuman_age(int human_age) {
+	public void setHuman_age(Integer human_age) {
 		this.human_age = human_age;
 	}
 
@@ -269,11 +244,11 @@ public class Engage_resume implements Serializable{
 		this.human_educated_degree = human_educated_degree;
 	}
 
-	public int getHuman_educated_years() {
+	public Integer getHuman_educated_years() {
 		return human_educated_years;
 	}
 
-	public void setHuman_educated_years(int human_educated_years) {
+	public void setHuman_educated_years(Integer human_educated_years) {
 		this.human_educated_years = human_educated_years;
 	}
 
@@ -357,11 +332,11 @@ public class Engage_resume implements Serializable{
 		this.attachment_name = attachment_name;
 	}
 
-	public int getCheck_status() {
+	public Integer getCheck_status() {
 		return check_status;
 	}
 
-	public void setCheck_status(int check_status) {
+	public void setCheck_status(Integer check_status) {
 		this.check_status = check_status;
 	}
 
@@ -397,27 +372,27 @@ public class Engage_resume implements Serializable{
 		this.check_time = check_time;
 	}
 
-	public int getInterview_status() {
-		return interview_status;
+	public Integer getIntegererview_status() {
+		return Integererview_status;
 	}
 
-	public void setInterview_status(int interview_status) {
-		this.interview_status = interview_status;
+	public void setIntegererview_status(Integer Integererview_status) {
+		this.Integererview_status = Integererview_status;
 	}
 
-	public DecimalFormat getTotal_points() {
-		return total_points;
+	public BigDecimal getTotal_poIntegers() {
+		return total_poIntegers;
 	}
 
-	public void setTotal_points(DecimalFormat total_points) {
-		this.total_points = total_points;
+	public void setTotal_poIntegers(BigDecimal total_poIntegers) {
+		this.total_poIntegers = total_poIntegers;
 	}
 
-	public int getTest_amount() {
+	public Integer getTest_amount() {
 		return test_amount;
 	}
 
-	public void setTest_amount(int test_amount) {
+	public void setTest_amount(Integer test_amount) {
 		this.test_amount = test_amount;
 	}
 
@@ -469,11 +444,11 @@ public class Engage_resume implements Serializable{
 		this.pass_check_time = pass_check_time;
 	}
 
-	public int getPass_check_status() {
+	public Integer getPass_check_status() {
 		return pass_check_status;
 	}
 
-	public void setPass_check_status(int pass_check_status) {
+	public void setPass_check_status(Integer pass_check_status) {
 		this.pass_check_status = pass_check_status;
 	}
 
@@ -491,6 +466,11 @@ public class Engage_resume implements Serializable{
 
 	public void setPass_passComment(String pass_passComment) {
 		this.pass_passComment = pass_passComment;
+	}
+
+
+	public Engage_resume() {
+		super();
 	}
 	
 	

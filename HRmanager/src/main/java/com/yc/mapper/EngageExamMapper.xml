@@ -116,6 +116,70 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			second_kind_id=#{second_kind_id}
 		</where>
 	</select>
+	<!-- 登记\更新\删除\查询试卷 -->
+	<insert id="addEngageExam" parameterType="Engage_exam" useGeneratedKeys="true" keyProperty="exa_id">
+		insert into engage_exam(exam_number,major_kind_id,major_kind_name,major_id,major_name,register,regist_time,limite_time) 
+		values(#{exam_number},#{config_major.config_major_kind.major_kind_id},#{config_major.config_major_kind.major_kind_name},#{config_major.major_id},#{config_major.major_name}
+		,#{register},#{regist_time},#{limite_time})
+	</insert>
+	<update id="updateEngageExam" parameterType="Engage_exam">
+		update engage_exam
+		<trim prefix="set" suffixOverrides=",">
+			<if test="config_major.config_major_kind.major_kind_id!=null">
+				major_kind_id=#{config_major.config_major_kind.major_kind_id},
+			</if>
+			<if test="config_major.config_major_kind.major_kind_name!=null">
+				major_kind_name=#{config_major.config_major_kind.major_kind_name},
+			</if>
+			<if test="config_major.major_id!=null">
+				major_id=#{config_major.major_id},
+			</if>
+			<if test="config_major.major_name!=null">
+				major_name=#{config_major.major_name},
+			</if>
+			<if test="register!=null">
+				register=#{register},
+			</if>
+			<if test="regist_time!=null">
+				regist_time=#{regist_time},
+			</if>
+			<if test="limite_time!=null">
+				limite_time=#{limite_time},
+			</if>
+		</trim>
+		<where>
+			exam_number=#{exam_number}
+		</where>
+	</update>
+	<delete id="deleteEngageExam" parameterType="Engage_exam">
+		delete from engage_exam where exam_number=#{exam_number}
+	</delete>
+	<select id="selectEngageExam" parameterType="Engage_exam">
+		select * from engage_exam
+		<trim prefix="where" suffixOverrides="and">
+			<if test="exam_number!=null">
+				exam_number=#{exam_number}
+			</if>
+			<if test="config_major.config_major_kind.major_kind_id!=null">
+				major_kind_id=#{config_major.config_major_kind.major_kind_id}
+			</if>
+			<if test="config_major.major_id!=null">
+				major_id=#{config_major.major_id}
+			</if>
+			<if test="config_major.major_name!=null">
+				major_name=#{config_major.major_name}
+			</if>
+			<if test="register!=null">
+				register=#{register}
+			</if>
+			<if test="regist_time!=null">
+				regist_time=#{regist_time}
+			</if>
+			<if test="limite_time!=null">
+				limite_time=#{limite_time}
+			</if>
+		</trim>
+	</select>
 	<!-- 插入、更新、删除、查询试卷详细信息  删除试卷的时候必须删除试卷登记及其详细信息-->
 	<insert id="addEngageExamDetails" parameterType="Engage_exam_details" useGeneratedKeys="true" keyProperty="exd_id">
 		isnert into engage_exam_details(exam_number,first_kind_id,first_kind_name,second_kind_id,second_kind_name,question_amount) values(
@@ -182,69 +246,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			</association>
 		</association>
 	</resultMap>
-	<!-- 登记\更新\删除\查询试卷 -->
-	<insert id="addEngageExam" parameterType="Config_major" useGeneratedKeys="true" keyProperty="exa_id">
-		insert into engage_exam(exam_number,major_kind_id,major_kind_name,major_id,major_name,register,regist_time,limite_time) 
-		values(#{exam_number},#{config_major_kind.major_kind_id},#{config_major_kind.major_kind_name},#{major_id},#{major_name}
-		,#{register},#{regist_time},#{limite_time})
-	</insert>
-	<update id="updateEngageExam" parameterType="Engage_exam">
-		update engage_exam
-		<trim prefix="set" suffixOverrides=",">
-			<if test="config_major.config_major_kind.major_kind_id!=null">
-				major_kind_id=#{config_major.config_major_kind.major_kind_id},
-			</if>
-			<if test="config_major.config_major_kind.major_kind_name!=null">
-				major_kind_name=#{config_major.config_major_kind.major_kind_name},
-			</if>
-			<if test="config_major.major_id!=null">
-				major_id=#{config_major.major_id},
-			</if>
-			<if test="config_major.major_name!=null">
-				major_name=#{config_major.major_name},
-			</if>
-			<if test="register!=null">
-				register=#{register},
-			</if>
-			<if test="regist_time!=null">
-				regist_time=#{regist_time},
-			</if>
-			<if test="limite_time!=null">
-				limite_time=#{limite_time},
-			</if>
-		</trim>
-		where exam_number=#{exam_number}
-	</update>
-	<delete id="deleteEngageExam" parameterType="Engage_exam">
-		delete from engage_exam where exam_number=#{exam_number}
-	</delete>
-	<select id="selectEngageExam" parameterType="Engage_exam">
-		select * from engage_exam
-		<trim prefix="where" suffixOverrides="and">
-			<if test="exam_number!=null">
-				exam_number=#{exam_number}
-			</if>
-			<if test="config_major.config_major_kind.major_kind_id!=null">
-				major_kind_id=#{config_major.config_major_kind.major_kind_id}
-			</if>
-			<if test="config_major.major_id!=null">
-				major_id=#{config_major.major_id}
-			</if>
-			<if test="config_major.major_name!=null">
-				major_name=#{config_major.major_name}
-			</if>
-			<if test="register!=null">
-				register=#{register}
-			</if>
-			<if test="regist_time!=null">
-				regist_time=#{regist_time}
-			</if>
-			<if test="limite_time!=null">
-				limite_time=#{limite_time}
-			</if>
-			<if test="startTime!=null and endTime!=null">
-				limite_time between #{startTime} and #{endTime}
-			</if>
-		</trim>
-	</select>
+	
 </mapper>

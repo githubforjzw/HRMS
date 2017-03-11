@@ -11,10 +11,14 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.yc.bean.Config_major;
+import com.yc.bean.Config_major_kind;
 import com.yc.bean.Config_question_first_kind;
 import com.yc.bean.Config_question_second_kind;
+import com.yc.bean.Engage_exam;
 import com.yc.bean.Engage_subjects;
 import com.yc.bean.PaginationModel;
+import com.yc.web.utils.UUIDHexGenerator;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -156,7 +160,39 @@ public class AppTest extends TestCase{
 		System.out.println(a+"-"+b);
 	}
 	
+	public void testApp9() throws SQLException {
+		ApplicationContext ac = new ClassPathXmlApplicationContext( "beans.xml" );
+		assertNotNull( ac.getBean("sqlSessionFactory") );
+		SqlSessionFactory ds=(SqlSessionFactory)ac.getBean("sqlSessionFactory");
+		SqlSession ss=ds.openSession();
+		Engage_exam engage_exam=new Engage_exam();
+		engage_exam.setExam_number(UUIDHexGenerator.getUniqueID2());
+		Config_major_kind config_major_kind=new Config_major_kind();
+		config_major_kind.setMajor_kind_id("1");
+		config_major_kind.setMajor_kind_name("销售");
+		Config_major config_major=new Config_major();
+		config_major.setConfig_major_kind(config_major_kind);
+		config_major.setMajor_id("01");
+		config_major.setMajor_name("区域经理");
+		engage_exam.setConfig_major(config_major);
+		engage_exam.setLimite_time(2);
+		engage_exam.setRegist_time(new Timestamp(System.currentTimeMillis()));
+		engage_exam.setRegister("Geek");
+		int i=ss.insert("addEngageExam", engage_exam);
+		System.out.println("成功插入了吗?"+i);
+	}
 	
+	public void testApp10() throws SQLException {
+		ApplicationContext ac = new ClassPathXmlApplicationContext( "beans.xml" );
+		assertNotNull( ac.getBean("sqlSessionFactory") );
+		SqlSessionFactory ds=(SqlSessionFactory)ac.getBean("sqlSessionFactory");
+		SqlSession ss=ds.openSession();
+		Engage_exam engage_exam=new Engage_exam();
+		engage_exam.setLimite_time(56);
+		engage_exam.setRegister("AKKKK");
+		engage_exam.setExam_number("d7a952f3201703102103289");
+		int i=ss.update("updateEngageExam", engage_exam);
+	}
 
 }
 

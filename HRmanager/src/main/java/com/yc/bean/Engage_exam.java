@@ -10,33 +10,13 @@ public class Engage_exam implements Serializable{
 	private Integer exa_id ;
 	private String exam_number;
 	private Config_major config_major;
-	private String register ;
+	private String register;
 	private Timestamp regist_time ;
 	private Integer limite_time ;
-	
-	private Timestamp startTime;
-	private Timestamp endTime;
-	
-	public Timestamp getEndTime() {
-		return endTime;
-	}
-	
-	public void setEndTime(Timestamp endTime) {
-		this.endTime = endTime;
-	}
-	
-	public Timestamp getStartTime() {
-		return startTime;
-	}
-	
-	public void setStartTime(Timestamp startTime) {
-		this.startTime = startTime;
-	}
 	
 	public Engage_exam() {
 		super();
 	}
-	
 	public Integer getExa_id() {
 		return exa_id;
 	}
@@ -49,8 +29,12 @@ public class Engage_exam implements Serializable{
 	public void setExam_number(String exam_number) {
 		this.exam_number = exam_number;
 	}
-	
-	
+	public Config_major getConfig_major() {
+		return config_major;
+	}
+	public void setConfig_major(Config_major config_major) {
+		this.config_major = config_major;
+	}
 	public String getRegister() {
 		return register;
 	}
@@ -69,20 +53,12 @@ public class Engage_exam implements Serializable{
 	public void setLimite_time(Integer limite_time) {
 		this.limite_time = limite_time;
 	}
-
-	public Config_major getConfig_major() {
-		return config_major;
-	}
-
-	public void setConfig_major(Config_major config_major) {
-		this.config_major = config_major;
-	}
-
 	@Override
 	public String toString() {
 		return "Engage_exam [exa_id=" + exa_id + ", exam_number=" + exam_number + ", config_major=" + config_major
 				+ ", register=" + register + ", regist_time=" + regist_time + ", limite_time=" + limite_time + "]";
 	}
+	
 	
 	
 	

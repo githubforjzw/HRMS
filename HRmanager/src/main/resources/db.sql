@@ -1032,6 +1032,7 @@ drop table engage_exam;
 
 alter table  engage_exam 
 	add constraint  engage_exam_PK  primary key ( exa_id )   
+d7a952f3201703102103289
 
 
 

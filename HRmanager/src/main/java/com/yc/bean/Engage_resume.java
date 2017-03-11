@@ -13,10 +13,7 @@ public class Engage_resume implements Serializable{
 	private String engage_type ;
 	private String human_address ;
 	private String human_postcode ;
-	private String human_major_kind_id ;
-	private String human_major_kind_name ;
-	private String human_major_id ;
-	private String human_major_name ;
+	private Config_major config_major;
 	private String human_telephone ;
 	private String human_mobilephone ;
 	private String human_qq;
@@ -65,26 +62,25 @@ public class Engage_resume implements Serializable{
 	@Override
 	public String toString() {
 		return "Engage_resume [res_id=" + res_id + ", human_name=" + human_name + ", engage_type=" + engage_type
-				+ ", human_address=" + human_address + ", human_postcode=" + human_postcode + ", human_major_kind_id="
-				+ human_major_kind_id + ", human_major_kind_name=" + human_major_kind_name + ", human_major_id="
-				+ human_major_id + ", human_major_name=" + human_major_name + ", human_telephone=" + human_telephone
-				+ ", human_mobilephone=" + human_mobilephone + ", human_qq=" + human_qq + ", human_email=" + human_email
-				+ ", human_hobby=" + human_hobby + ", human_specility=" + human_specility + ", human_sex=" + human_sex
-				+ ", human_religion=" + human_religion + ", human_party=" + human_party + ", human_nationality="
-				+ human_nationality + ", human_race=" + human_race + ", human_birthday=" + human_birthday
-				+ ", human_age=" + human_age + ", human_educated_degree=" + human_educated_degree
-				+ ", human_educated_years=" + human_educated_years + ", human_educated_major=" + human_educated_major
-				+ ", human_college=" + human_college + ", human_idcard=" + human_idcard + ", human_birthplace="
-				+ human_birthplace + ", demand_salary_standard=" + demand_salary_standard + ", human_history_records="
+				+ ", human_address=" + human_address + ", human_postcode=" + human_postcode + ", config_major="
+				+ config_major + ", human_telephone=" + human_telephone + ", human_mobilephone=" + human_mobilephone
+				+ ", human_qq=" + human_qq + ", human_email=" + human_email + ", human_hobby=" + human_hobby
+				+ ", human_specility=" + human_specility + ", human_sex=" + human_sex + ", human_religion="
+				+ human_religion + ", human_party=" + human_party + ", human_nationality=" + human_nationality
+				+ ", human_race=" + human_race + ", human_birthday=" + human_birthday + ", human_age=" + human_age
+				+ ", human_educated_degree=" + human_educated_degree + ", human_educated_years=" + human_educated_years
+				+ ", human_educated_major=" + human_educated_major + ", human_college=" + human_college
+				+ ", human_idcard=" + human_idcard + ", human_birthplace=" + human_birthplace
+				+ ", demand_salary_standard=" + demand_salary_standard + ", human_history_records="
 				+ human_history_records + ", remark=" + remark + ", recomandation=" + recomandation + ", human_picture="
 				+ human_picture + ", attachment_name=" + attachment_name + ", check_status=" + check_status
 				+ ", register=" + register + ", regist_time=" + regist_time + ", checker=" + checker + ", check_time="
-				+ check_time + ", Integererview_status=" + Integererview_status + ", total_poIntegers=" + total_poIntegers
-				+ ", test_amount=" + test_amount + ", test_checker=" + test_checker + ", test_check_time="
-				+ test_check_time + ", pass_register=" + pass_register + ", pass_regist_time=" + pass_regist_time
-				+ ", pass_checker=" + pass_checker + ", pass_check_time=" + pass_check_time + ", pass_check_status="
-				+ pass_check_status + ", pass_checkComment=" + pass_checkComment + ", pass_passComment="
-				+ pass_passComment + "]";
+				+ check_time + ", Integererview_status=" + Integererview_status + ", total_poIntegers="
+				+ total_poIntegers + ", test_amount=" + test_amount + ", test_checker=" + test_checker
+				+ ", test_check_time=" + test_check_time + ", pass_register=" + pass_register + ", pass_regist_time="
+				+ pass_regist_time + ", pass_checker=" + pass_checker + ", pass_check_time=" + pass_check_time
+				+ ", pass_check_status=" + pass_check_status + ", pass_checkComment=" + pass_checkComment
+				+ ", pass_passComment=" + pass_passComment + "]";
 	}
 
 	public Integer getRes_id() {
@@ -127,36 +123,12 @@ public class Engage_resume implements Serializable{
 		this.human_postcode = human_postcode;
 	}
 
-	public String getHuman_major_kind_id() {
-		return human_major_kind_id;
+	public Config_major getConfig_major() {
+		return config_major;
 	}
 
-	public void setHuman_major_kind_id(String human_major_kind_id) {
-		this.human_major_kind_id = human_major_kind_id;
-	}
-
-	public String getHuman_major_kind_name() {
-		return human_major_kind_name;
-	}
-
-	public void setHuman_major_kind_name(String human_major_kind_name) {
-		this.human_major_kind_name = human_major_kind_name;
-	}
-
-	public String getHuman_major_id() {
-		return human_major_id;
-	}
-
-	public void setHuman_major_id(String human_major_id) {
-		this.human_major_id = human_major_id;
-	}
-
-	public String getHuman_major_name() {
-		return human_major_name;
-	}
-
-	public void setHuman_major_name(String human_major_name) {
-		this.human_major_name = human_major_name;
+	public void setConfig_major(Config_major config_major) {
+		this.config_major = config_major;
 	}
 
 	public String getHuman_telephone() {
@@ -496,71 +468,6 @@ public class Engage_resume implements Serializable{
 		this.pass_passComment = pass_passComment;
 	}
 
-	public Engage_resume(Integer res_id, String human_name, String engage_type, String human_address, String human_postcode,
-			String human_major_kind_id, String human_major_kind_name, String human_major_id, String human_major_name,
-			String human_telephone, String human_mobilephone, String human_qq, String human_email, String human_hobby,
-			String human_specility, String human_sex, String human_religion, String human_party,
-			String human_nationality, String human_race, Timestamp human_birthday, Integer human_age,
-			String human_educated_degree, Integer human_educated_years, String human_educated_major, String human_college,
-			String human_idcard, String human_birthplace, Number demand_salary_standard, String human_history_records,
-			String remark, String recomandation, String human_picture, String attachment_name, Integer check_status,
-			String register, Timestamp regist_time, String checker, Timestamp check_time, Integer Integererview_status,
-			BigDecimal total_poIntegers, Integer test_amount, String test_checker, Timestamp test_check_time,
-			String pass_register, Timestamp pass_regist_time, String pass_checker, Timestamp pass_check_time,
-			Integer pass_check_status, String pass_checkComment, String pass_passComment) {
-		super();
-		this.res_id = res_id;
-		this.human_name = human_name;
-		this.engage_type = engage_type;
-		this.human_address = human_address;
-		this.human_postcode = human_postcode;
-		this.human_major_kind_id = human_major_kind_id;
-		this.human_major_kind_name = human_major_kind_name;
-		this.human_major_id = human_major_id;
-		this.human_major_name = human_major_name;
-		this.human_telephone = human_telephone;
-		this.human_mobilephone = human_mobilephone;
-		this.human_qq = human_qq;
-		this.human_email = human_email;
-		this.human_hobby = human_hobby;
-		this.human_specility = human_specility;
-		this.human_sex = human_sex;
-		this.human_religion = human_religion;
-		this.human_party = human_party;
-		this.human_nationality = human_nationality;
-		this.human_race = human_race;
-		this.human_birthday = human_birthday;
-		this.human_age = human_age;
-		this.human_educated_degree = human_educated_degree;
-		this.human_educated_years = human_educated_years;
-		this.human_educated_major = human_educated_major;
-		this.human_college = human_college;
-		this.human_idcard = human_idcard;
-		this.human_birthplace = human_birthplace;
-		this.demand_salary_standard = demand_salary_standard;
-		this.human_history_records = human_history_records;
-		this.remark = remark;
-		this.recomandation = recomandation;
-		this.human_picture = human_picture;
-		this.attachment_name = attachment_name;
-		this.check_status = check_status;
-		this.register = register;
-		this.regist_time = regist_time;
-		this.checker = checker;
-		this.check_time = check_time;
-		this.Integererview_status = Integererview_status;
-		this.total_poIntegers = total_poIntegers;
-		this.test_amount = test_amount;
-		this.test_checker = test_checker;
-		this.test_check_time = test_check_time;
-		this.pass_register = pass_register;
-		this.pass_regist_time = pass_regist_time;
-		this.pass_checker = pass_checker;
-		this.pass_check_time = pass_check_time;
-		this.pass_check_status = pass_check_status;
-		this.pass_checkComment = pass_checkComment;
-		this.pass_passComment = pass_passComment;
-	}
 
 	public Engage_resume() {
 		super();

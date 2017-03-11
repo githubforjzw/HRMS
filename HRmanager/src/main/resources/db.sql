@@ -277,14 +277,14 @@ create table config_major (
 select * from config_major;
 drop table config_major;
 
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('1','销售','01','区域经理',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('1','销售','02','总经理',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('2','软件开发','01','项目经理',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('2','软件开发','02','程序员',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('3','人力资源','01','人事经理',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('3','人力资源','02','专员',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('4','生产部','01','主任',0);
-insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('4','生产部','02','技术工人',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('1','销售','1','区域经理',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('1','销售','2','总经理',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('2','软件开发','1','项目经理',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('2','软件开发','2','程序员',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('3','人力资源','1','人事经理',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('3','人力资源','2','专员',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('4','生产部','1','主任',0);
+insert into config_major(major_kind_id,major_kind_name,major_id,major_name,test_amount) values('4','生产部','2','技术工人',0);
 
 
 /* 创建新表  HumanFile_dig 。                                                                     */
@@ -1255,6 +1255,19 @@ create table  engage_resume  (
 
 select * from engage_resume;
 drop table engage_resume;
+
+insert into engage_resume(human_name ,engage_type,human_address,human_postcode,human_major_kind_id,
+	human_major_kind_name,human_major_id,human_major_name,human_telephone,human_mobilephone,human_qq,human_email,
+	human_hobby,human_specility,human_sex,human_religion,human_party,human_nationality,human_race,human_birthday,
+	human_age,human_educated_degree,human_educated_years,human_educated_major,human_college,human_idcard,human_birthplace,
+	demand_salary_standard,human_history_records,remark,recomandation,human_picture,attachment_name,check_status,
+	register,regist_time,checker,check_time,interview_status,total_points,test_amount,test_checker,test_check_time,
+	pass_register,pass_regist_time,pass_checker,pass_check_time,pass_check_status,pass_checkComment,pass_passComment) 
+value ( '张三' , '社招', '湖南','123456','1','销售','1','区域经理','12345678901','12345678901','123456789',
+		'123456789@qq.com','玩游戏','玩','男','佛教','团员','中国','汉族','1999-9-9',20,'本科',16,'计算机','湖南工学院',
+		'123456789123456789','湖南','6000','无','无','可以录用','照片无','档案附件无',0,'pt',now(),'ppt',now(),
+		1,'666',1,'zs',now(),'ls',now(),'ww',now(),1,'请求录用','批准');
+
 
 alter table  engage_resume 
 	add constraint  engage_resume_PK  primary key ( res_id )   

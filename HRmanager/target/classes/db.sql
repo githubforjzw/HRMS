@@ -303,7 +303,7 @@ drop table config_major_kind;
 /* 	 major_kind_name  : 职位分类名称                                                                */
 /* 	 major_id  : 职位编号                                                                         */
 /* 	 major_name  : 职位名称                                                                       */ 
-/* 	 test_amount  : 题套数量                                                                      */   
+/* 	 test_amount  : 题套数量                                                                       */   
 create table config_major ( 
 	mak_id int primary key auto_increment,
 	major_kind_id varchar(20)  ,

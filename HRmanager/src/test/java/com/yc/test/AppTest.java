@@ -188,11 +188,32 @@ public class AppTest extends TestCase{
 		SqlSessionFactory ds=(SqlSessionFactory)ac.getBean("sqlSessionFactory");
 		SqlSession ss=ds.openSession();
 		Engage_exam engage_exam=new Engage_exam();
+		Config_major config_major=new Config_major();
+		Config_major_kind config_major_kind=new Config_major_kind();
+		config_major.setConfig_major_kind(config_major_kind);
+		engage_exam.setConfig_major(config_major);
 		engage_exam.setLimite_time(56);
 		engage_exam.setRegister("AKKKK");
 		engage_exam.setExam_number("d7a952f3201703102103289");
 		int i=ss.update("updateEngageExam", engage_exam);
 	}
+	
+	public void testApp11() throws SQLException {
+		ApplicationContext ac = new ClassPathXmlApplicationContext( "beans.xml" );
+		assertNotNull( ac.getBean("sqlSessionFactory") );
+		SqlSessionFactory ds=(SqlSessionFactory)ac.getBean("sqlSessionFactory");
+		SqlSession ss=ds.openSession();
+		Engage_exam engage_exam=new Engage_exam();
+		Config_major config_major=new Config_major();
+		Config_major_kind config_major_kind=new Config_major_kind();
+		config_major.setConfig_major_kind(config_major_kind);
+		engage_exam.setConfig_major(config_major);
+		engage_exam.setLimite_time(56);
+		engage_exam.setRegister("AKKKK");
+		engage_exam.setExam_number("d7a952f3201703102103289");
+		int i=ss.update("updateEngageExam", engage_exam);
+	}
+	
 
 }
 

@@ -33,13 +33,12 @@
 		style="height: 60px; background: #1AB2E8; padding: 10px">
 		<h1>欢迎使用人力资源后台管理系统</h1>
 	</div>
-	<div data-options="region:'west',split:true,title:'信息管理' "
-		style="width: 200px;">
-		<div class="easyui-accordion"
-			data-options="fit:true,border:false,selected:false" style="">
+	<div data-options="region:'west',split:true,title:'信息管理' "style="width: 200px;">
+	
+		<div class="easyui-accordion" data-options="fit:true,border:false,selected:false" style="">
 			<div title="系统管理" style="overflow: auto; padding: 10px;">
 				<ul id="systemManager" class="easyui-tree">
-					<li><span>人力资源档案管理设置</span></li>
+					<li id=""><span>人力资源档案管理设置</span></li>
 					<li><span>薪酬管理设置</span></li>
 					<li><span>题库管理设置</span></li>
 					<li><span>其他设置</span></li>
@@ -73,15 +72,16 @@
 			</div>
 			<div title="招聘管理" style="overflow: auto; padding: 10px;">
 				<ul id="recruitManage" class="easyui-tree">
-					<li><span>职位发布管理</span></li>
+					<li id="position"><span>职位发布管理</span></li>
 					<li><span>简历管理</span></li>
 					<li><span>面试管理</span></li>
-					<li><span>招聘考试题库管理</span>
+
+					<li id="undo"><span>招聘考试题库管理</span>
 						<ul id="engage" class="easyui-tree">
 							<li id="SubjectsManager"><span>试题管理</span></li>
 						</ul>
 					</li>
-					<li><span>招聘考试管理</span>
+					<li id="undo"><span>招聘考试管理</span>
 						<ul id="engage_exam" class="easyui-tree">
 							<li id="EngageExamManager"><span>试卷管理</span></li>
 						</ul>

@@ -6,7 +6,7 @@ public class Config_primary_key implements Serializable{
 
 	private static final long serialVersionUID = 3474050521139156992L;
 
-	private int prk_id ;
+	private Integer prk_id ;
 	private String primary_key_table ;
 	private String primary_key ;
 	private String key_name ;
@@ -18,11 +18,11 @@ public class Config_primary_key implements Serializable{
 				+ primary_key + ", key_name=" + key_name + ", primary_key_status=" + primary_key_status + "]";
 	}
 
-	public int getPrk_id() {
+	public Integer getPrk_id() {
 		return prk_id;
 	}
 
-	public void setPrk_id(int prk_id) {
+	public void setPrk_id(Integer prk_id) {
 		this.prk_id = prk_id;
 	}
 
@@ -56,6 +56,11 @@ public class Config_primary_key implements Serializable{
 
 	public void setPrimary_key_status(String primary_key_status) {
 		this.primary_key_status = primary_key_status;
+	}
+
+
+	public Config_primary_key() {
+		super();
 	}
 	
 	

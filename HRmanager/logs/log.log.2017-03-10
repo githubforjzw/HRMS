@@ -1,0 +1,31 @@
+2017-03-10 21:19:56  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Fri Mar 10 21:19:56 CST 2017]; root of context hierarchy
+2017-03-10 21:19:57  [ main:757 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-10 21:19:59  [ main:2813 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-10 21:20:01  [ main:4352 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-10 21:20:02  [ main:5305 ] - [ DEBUG ]  ==>  Preparing: select count(*) from engage_subjects WHERE first_kind_id=? 
+2017-03-10 21:20:02  [ main:5372 ] - [ DEBUG ]  ==> Parameters: 1(String)
+2017-03-10 21:20:02  [ main:5596 ] - [ DEBUG ]  <==      Total: 1
+2017-03-10 21:20:02  [ main:5598 ] - [ DEBUG ]  Cache Hit Ratio [com.yc.mapper.EngageExamMapper]: 0.0
+2017-03-10 21:20:02  [ main:5599 ] - [ DEBUG ]  ==>  Preparing: select count(*) from engage_subjects WHERE second_kind_id=? 
+2017-03-10 21:20:02  [ main:5599 ] - [ DEBUG ]  ==> Parameters: 1(String)
+2017-03-10 21:20:02  [ main:5600 ] - [ DEBUG ]  <==      Total: 1
+2017-03-10 21:50:03  [ main:1 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Fri Mar 10 21:50:03 CST 2017]; root of context hierarchy
+2017-03-10 21:50:03  [ main:35 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-10 21:50:03  [ main:388 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-10 21:50:04  [ main:1292 ] - [ DEBUG ]  ==>  Preparing: insert into engage_exam(exam_number,major_kind_id,major_kind_name,major_id,major_name,register,regist_time,limite_time) values(?,?,?,?,? ,?,?,?) 
+2017-03-10 21:50:04  [ main:1332 ] - [ DEBUG ]  ==> Parameters: 40288e305ab87bc9015ab87bc9170000(String), 1(String), 销售(String), 01(String), 区域经理(String), Geek(String), 2017-03-10 21:50:04.567(Timestamp), 2(Integer)
+2017-03-10 21:51:05  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Fri Mar 10 21:51:05 CST 2017]; root of context hierarchy
+2017-03-10 21:51:05  [ main:40 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-10 21:51:06  [ main:409 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-10 21:51:07  [ main:1682 ] - [ DEBUG ]  ==>  Preparing: insert into engage_exam(exam_number,major_kind_id,major_kind_name,major_id,major_name,register,regist_time,limite_time) values(?,?,?,?,? ,?,?,?) 
+2017-03-10 21:51:07  [ main:1706 ] - [ DEBUG ]  ==> Parameters: d7a952f3201703102103289(String), 1(String), 销售(String), 01(String), 区域经理(String), Geek(String), 2017-03-10 21:51:07.293(Timestamp), 2(Integer)
+2017-03-10 21:51:07  [ main:1708 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-10 21:53:13  [ main:1 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Fri Mar 10 21:53:13 CST 2017]; root of context hierarchy
+2017-03-10 21:53:13  [ main:120 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-10 21:53:14  [ main:681 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-10 21:53:15  [ main:2173 ] - [ DEBUG ]  ==>  Preparing: insert into engage_exam(exam_number,major_kind_id,major_kind_name,major_id,major_name,register,regist_time,limite_time) values(?,?,?,?,? ,?,?,?) 
+2017-03-10 21:53:15  [ main:2201 ] - [ DEBUG ]  ==> Parameters: c5f3d65d201703102103210(String), 1(String), 销售(String), 01(String), 区域经理(String), Hack(String), 2017-03-10 21:53:15.21(Timestamp), 2(Integer)
+2017-03-10 21:53:15  [ main:2203 ] - [ DEBUG ]  <==    Updates: 1
+2017-03-10 21:57:35  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Fri Mar 10 21:57:35 CST 2017]; root of context hierarchy
+2017-03-10 21:57:35  [ main:37 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-10 21:57:35  [ main:394 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]

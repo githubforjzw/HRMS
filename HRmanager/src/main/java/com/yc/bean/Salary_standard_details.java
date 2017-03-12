@@ -1,6 +1,7 @@
 package com.yc.bean;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 
@@ -8,48 +9,40 @@ public class Salary_standard_details implements Serializable{
 
 	private static final long serialVersionUID = 4842541281931081662L;
 
-	private int sdt_id ;
-	private String  standard_id ;
-	private String  standard_name ;
-	private int  item_id ;
+	private Integer sdt_id ;
+	private Salary_standard salary_standard;
+	private Integer  item_id ;
 	private String  item_name;
-	private DecimalFormat  salary ;
+	private BigDecimal  salary ;
 	
 	@Override
 	public String toString() {
-		return "Salary_standard_details [sdt_id=" + sdt_id + ", standard_id=" + standard_id + ", standard_name="
-				+ standard_name + ", item_id=" + item_id + ", item_name=" + item_name + ", salary=" + salary + "]";
+		return "Salary_standard_details [sdt_id=" + sdt_id + ", standard_id=" + salary_standard.getStandard_id() + ", standard_name="
+				+ salary_standard.getStandard_name() + ", item_id=" + item_id + ", item_name=" + item_name + ", salary=" + salary + "]";
 	}
 
-	public int getSdt_id() {
+	public Integer getSdt_id() {
 		return sdt_id;
 	}
 
-	public void setSdt_id(int sdt_id) {
+	public void setSdt_id(Integer sdt_id) {
 		this.sdt_id = sdt_id;
 	}
 
-	public String getStandard_id() {
-		return standard_id;
+
+	public Salary_standard getSalary_standard() {
+		return salary_standard;
 	}
 
-	public void setStandard_id(String standard_id) {
-		this.standard_id = standard_id;
+	public void setSalary_standard(Salary_standard salary_standard) {
+		this.salary_standard = salary_standard;
 	}
 
-	public String getStandard_name() {
-		return standard_name;
-	}
-
-	public void setStandard_name(String standard_name) {
-		this.standard_name = standard_name;
-	}
-
-	public int getItem_id() {
+	public Integer getItem_id() {
 		return item_id;
 	}
 
-	public void setItem_id(int item_id) {
+	public void setItem_id(Integer item_id) {
 		this.item_id = item_id;
 	}
 
@@ -61,13 +54,18 @@ public class Salary_standard_details implements Serializable{
 		this.item_name = item_name;
 	}
 
-	public DecimalFormat getSalary() {
+	public BigDecimal getSalary() {
 		return salary;
 	}
 
-	public void setSalary(DecimalFormat salary) {
+	public void setSalary(BigDecimal salary) {
 		this.salary = salary;
 	}
+
+	public Salary_standard_details() {
+		super();
+	}
+
 	
 	
 }

@@ -1,6 +1,7 @@
 package com.yc.bean;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 
@@ -8,7 +9,7 @@ public class Salary_standard implements Serializable{
 
 	private static final long serialVersionUID = -6689116965293719993L;
 
-	private int ssd_id ;
+	private Integer ssd_id ;
 	private String standard_id ;
 	private String standard_name ;
 	private String designer ;
@@ -18,9 +19,9 @@ public class Salary_standard implements Serializable{
 	private Timestamp regist_time ;
 	private Timestamp check_time ;
 	private Timestamp change_time ;
-	private DecimalFormat salary_sum ;
-	private int check_status;
-	private int change_status;
+	private BigDecimal salary_sum ;
+	private Integer check_status;
+	private Integer change_status;
 	private String check_comment;
 	private String remark ;
 	
@@ -33,11 +34,11 @@ public class Salary_standard implements Serializable{
 				+ ", check_comment=" + check_comment + ", remark=" + remark + "]";
 	}
 
-	public int getSsd_id() {
+	public Integer getSsd_id() {
 		return ssd_id;
 	}
 
-	public void setSsd_id(int ssd_id) {
+	public void setSsd_id(Integer ssd_id) {
 		this.ssd_id = ssd_id;
 	}
 
@@ -113,27 +114,28 @@ public class Salary_standard implements Serializable{
 		this.change_time = change_time;
 	}
 
-	public DecimalFormat getSalary_sum() {
+
+	public BigDecimal getSalary_sum() {
 		return salary_sum;
 	}
 
-	public void setSalary_sum(DecimalFormat salary_sum) {
+	public void setSalary_sum(BigDecimal salary_sum) {
 		this.salary_sum = salary_sum;
 	}
 
-	public int getCheck_status() {
+	public Integer getCheck_status() {
 		return check_status;
 	}
 
-	public void setCheck_status(int check_status) {
+	public void setCheck_status(Integer check_status) {
 		this.check_status = check_status;
 	}
 
-	public int getChange_status() {
+	public Integer getChange_status() {
 		return change_status;
 	}
 
-	public void setChange_status(int change_status) {
+	public void setChange_status(Integer change_status) {
 		this.change_status = change_status;
 	}
 
@@ -151,6 +153,11 @@ public class Salary_standard implements Serializable{
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+
+	public Salary_standard() {
+		super();
 	}
 	
 	

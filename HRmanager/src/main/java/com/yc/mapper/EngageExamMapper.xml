@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.mapper.EngageExamMapper">
+	<cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true"></cache>
+	<insert id="addSubject" parameterType="Engage_subjects" useGeneratedKeys="true" keyProperty="sub_id">
+		insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_name,
+		register,regist_time,derivation,content,key_a
+		,key_b,key_c,key_d,key_e,correct_key,changer,change_time) values(#{config_question_second_kind.config_question_first_kind.first_kind_id},
+		#{config_question_second_kind.config_question_first_kind.first_kind_name},#{config_question_second_kind.second_kind_id},
+		#{config_question_second_kind.second_kind_name},#{register},
+		#{regist_time},#{derivation},#{content},#{key_a},
+		#{key_b},#{key_c},#{key_d},#{key_e},#{correct_key},#{changer},#{change_time})
+	</insert>
+	<delete id="deleteSubject" parameterType="Engage_subjects">
+		delete from engage_subjects where engage_subjects.content=#{content}
+	</delete>
+	<update id="updateSubject" parameterType="Engage_subjects">
+		update engage_subjects
+		<trim prefix="set" suffixOverrides=",">
+			<if test="config_question_second_kind.config_question_first_kind.first_kind_id!=null">
+				first_kind_id=#{config_question_second_kind.config_question_first_kind.first_kind_id},
+			</if>
+			<if test="config_question_second_kind.config_question_first_kind.first_kind_name!=null">
+				first_kind_name=#{config_question_second_kind.config_question_first_kind.first_kind_name},
+			</if>
+			<if test="config_question_second_kind.second_kind_id!=null">
+				second_kind_id=#{config_question_second_kind.second_kind_id},
+			</if>
+			<if test="config_question_second_kind.second_kind_name!=null">
+				second_kind_name=#{config_question_second_kind.second_kind_name},
+			</if>
+			<if test="register!=null">
+				register=#{register},
+			</if>
+			<if test="regist_time!=null">
+				regist_time=#{regist_time},
+			</if>
+			<if test="derivation!=null">
+				derivation=#{derivation},
+			</if>
+			<if test="content!=null">
+				content=#{content},
+			</if>
+			<if test="key_a!=null">
+				key_a=#{key_a},
+			</if>
+			<if test="key_b!=null">
+				key_b=#{key_b},
+			</if>
+			<if test="key_c!=null">
+				key_c=#{key_c},
+			</if>
+			<if test="key_d!=null">
+				key_d=#{key_d},
+			</if>
+			<if test="key_e!=null">
+				key_e=#{key_e},
+			</if>
+			<if test="correct_key!=null">
+				correct_key=#{correct_key},
+			</if>
+			<if test="changer!=null">
+				changer=#{changer},
+			</if>
+			<if test="change_time!=null">
+				change_time=#{change_time},
+			</if>
+		</trim>
+		<where>
+			<if test="sub_id!=null">
+				sub_id=#{sub_id}
+			</if>
+		</where>
+	</update>
+	<!-- 无任何限制条件的分页查询 -->
+	<select id="findAllSubject" parameterType="PaginationModel" resultType="Engage_subjects">
+		select * from engage_subjects
+		<if test="isOrderById == true">
+			order by sub_id
+		</if>
+		<if test="pageStart!=null and pageEnd!=null">
+			limit #{pageStart},#{pageEnd}
+		</if>
+	</select>
+	<!-- 根据试题一级和二级分类编号查询 -->
+	<select id="findSubjectByKind" parameterType="Engage_subjects" resultType="Engage_subjects">
+		select * from engage_subjects
+		<trim prefix="where" suffixOverrides=",">
+			<if test="config_question_second_kind.config_question_first_kind.first_kind_id!=null">
+				first_kind_id=#{config_question_second_kind.config_question_first_kind.first_kind_id},
+			</if>
+			<if test="config_question_second_kind.config_question_first_kind.first_kind_name!=null">
+				first_kind_name=#{config_question_second_kind.config_question_first_kind.first_kind_name},
+			</if>
+			<if test="config_question_second_kind.second_kind_id!=null">
+				second_kind_id=#{config_question_second_kind.second_kind_id},
+			</if>
+			<if test="config_question_second_kind.second_kind_name!=null">
+				second_kind_name=#{config_question_second_kind.second_kind_name},
+			</if>
+		</trim>
+	</select>
+	<!-- 获取一级分类下的试题数量 -->
+	<select id="findFirstSubjectCount" parameterType="Config_question_first_kind" resultType="Int">
+		select count(*) from engage_subjects
+		<where>
+			first_kind_id=#{first_kind_id}
+		</where>
+	</select>
+	<!-- 获取二级分类下的试题数量 -->
+	<select id="findSecondSubjectCount" parameterType="Config_question_second_kind" resultType="Int">
+		select count(*) from engage_subjects
+		<where>
+			second_kind_id=#{second_kind_id}
+		</where>
+	</select>
+	<!-- 登记\更新\删除\查询试卷 -->
+	<insert id="addEngageExam" parameterType="Engage_exam" useGeneratedKeys="true" keyProperty="exa_id">
+		insert into engage_exam(exam_number,major_kind_id,major_kind_name,major_id,major_name,register,regist_time,limite_time) 
+		values(#{exam_number},#{config_major.config_major_kind.major_kind_id},#{config_major.config_major_kind.major_kind_name},#{config_major.major_id},#{config_major.major_name}
+		,#{register},#{regist_time},#{limite_time})
+	</insert>
+	<update id="updateEngageExam" parameterType="Engage_exam">
+		update engage_exam
+		<trim prefix="set" suffixOverrides=",">
+			<if test="config_major.config_major_kind.major_kind_id!=null">
+				major_kind_id=#{config_major.config_major_kind.major_kind_id},
+			</if>
+			<if test="config_major.config_major_kind.major_kind_name!=null">
+				major_kind_name=#{config_major.config_major_kind.major_kind_name},
+			</if>
+			<if test="config_major.major_id!=null">
+				major_id=#{config_major.major_id},
+			</if>
+			<if test="config_major.major_name!=null">
+				major_name=#{config_major.major_name},
+			</if>
+			<if test="register!=null">
+				register=#{register},
+			</if>
+			<if test="regist_time!=null">
+				regist_time=#{regist_time},
+			</if>
+			<if test="limite_time!=null">
+				limite_time=#{limite_time},
+			</if>
+		</trim>
+		<where>
+			exam_number=#{exam_number}
+		</where>
+	</update>
+	<delete id="deleteEngageExam" parameterType="Engage_exam">
+		delete from engage_exam where exam_number=#{exam_number}
+	</delete>
+	<select id="selectEngageExam" parameterType="Engage_exam">
+		select * from engage_exam
+		<trim prefix="where" suffixOverrides="and">
+			<if test="exam_number!=null">
+				exam_number=#{exam_number}
+			</if>
+			<if test="config_major.config_major_kind.major_kind_id!=null">
+				major_kind_id=#{config_major.config_major_kind.major_kind_id}
+			</if>
+			<if test="config_major.major_id!=null">
+				major_id=#{config_major.major_id}
+			</if>
+			<if test="config_major.major_name!=null">
+				major_name=#{config_major.major_name}
+			</if>
+			<if test="register!=null">
+				register=#{register}
+			</if>
+			<if test="regist_time!=null">
+				regist_time=#{regist_time}
+			</if>
+			<if test="limite_time!=null">
+				limite_time=#{limite_time}
+			</if>
+		</trim>
+	</select>
+	<!-- 插入、更新、删除、查询试卷详细信息  删除试卷的时候必须删除试卷登记及其详细信息-->
+	<insert id="addEngageExamDetails" parameterType="Engage_exam_details" useGeneratedKeys="true" keyProperty="exd_id">
+		isnert into engage_exam_details(exam_number,first_kind_id,first_kind_name,second_kind_id,second_kind_name,question_amount) values(
+			#{exam_number},#{config_question_second_kind.config_question_first_kind.first_kind_id},
+			#{config_question_second_kind.config_question_first_kind.first_kind_name},#{config_question_second_kind.second_kind_id}
+			,#{config_question_second_kind.second_kind_name},#{question_amount})
+	</insert>
+	<delete id="deleteEngageExamDetails" parameterType="Engage_exam_details">
+		delete from Engage_exam_details where exam_number=#{exam_number}
+	</delete>
+	<update id="updateEngageExamDetails" parameterType="Engage_exam_details">
+		update engage_exam_details
+		<trim prefix="set" suffixOverrides=",">
+			<if test="config_question_second_kind.config_question_first_kind.first_kind_id!=null">
+				first_kind_id=#{config_question_second_kind.config_question_first_kind.first_kind_id},
+			</if>
+			<if test="config_question_second_kind.config_question_first_kind.first_kind_name!=null">
+				first_kind_name=#{config_question_second_kind.config_question_first_kind.first_kind_name},
+			</if>
+			<if test="config_question_second_kind.second_kind_id!=null">
+				second_kind_id=#{config_question_second_kind.second_kind_id},
+			</if>
+			<if test="config_question_second_kind.second_kind_name!=null">
+				second_kind_name=#{config_question_second_kind.second_kind_name},
+			</if>
+			<if test="question_amount!=null and question_amount>0">
+				question_amount=#{question_amount},
+			</if>
+		</trim>
+		where exam_number=#{exam_number}
+	</update>
+	<select id="selectEngageExamDetails" parameterType="Engage_exam_details" resultMap="EngageExamDetails">
+		select * from engage_exam_details
+		<trim prefix="where" suffix="and">
+			<if test="exam_number!=null">
+				exam_number=#{exam_number}
+			</if>
+			<if test="config_question_second_kind.config_question_first_kind.first_kind_id!=null">
+				first_kind_id=#{config_question_second_kind.config_question_first_kind.first_kind_id}
+			</if>
+			<if test="config_question_second_kind.config_question_first_kind.first_kind_name!=null">
+				first_kind_name=#{config_question_second_kind.config_question_first_kind.first_kind_name}
+			</if>
+			<if test="config_question_second_kind.second_kind_id!=null">
+				second_kind_id=#{config_question_second_kind.second_kind_id}
+			</if>
+			<if test="config_question_second_kind.second_kind_name!=null">
+				second_kind_name=#{config_question_second_kind.second_kind_name}
+			</if>
+		</trim>
+	</select>
+	<resultMap id="EngageExamDetails" type="Engage_exam_details">
+		<id property="exd_id" column="exd_id"></id>
+		<result property="exam_number" column="exam_number" />
+		<result property="question_amount" column="question_amount" />
+		<association property="config_question_second_kind" javaType="Config_question_second_kind">
+			<id property="qsk_id" column="qsk_id" />
+			<result property="second_kind_id" column="second_kind_id" />
+			<result property="second_kind_name" column="second_kind_name" />
+			<association property="config_question_first_kind" javaType="Config_question_first_kind">
+				<id property="qfk_id" column="qfk_id"></id>
+				<result property="first_kind_id" column="first_kind_id"></result>
+				<result property="first_kind_name" column="first_kind_name"></result>
+			</association>
+		</association>
+	</resultMap>
+	
+</mapper>

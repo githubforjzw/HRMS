@@ -1,3 +1,25 @@
-2017-03-04 08:56:09  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@12e76db: startup date [Sat Mar 04 08:56:09 CST 2017]; root of context hierarchy
-2017-03-04 08:56:09  [ main:39 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
-2017-03-04 08:56:10  [ main:402 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-11 13:05:53  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sat Mar 11 13:05:53 CST 2017]; root of context hierarchy
+2017-03-11 13:05:53  [ main:277 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-11 13:05:55  [ main:2620 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-11 14:39:07  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sat Mar 11 14:39:07 CST 2017]; root of context hierarchy
+2017-03-11 14:39:07  [ main:45 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-11 14:39:08  [ main:529 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-11 14:55:42  [ main:1 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sat Mar 11 14:55:42 CST 2017]; root of context hierarchy
+2017-03-11 14:55:42  [ main:38 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-11 14:55:43  [ main:367 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-11 15:01:26  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sat Mar 11 15:01:26 CST 2017]; root of context hierarchy
+2017-03-11 15:01:26  [ main:36 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-11 15:01:26  [ main:407 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-11 15:01:27  [ main:1310 ] - [ DEBUG ]  ==>  Preparing: update engage_exam set register=? limite_time=? WHERE exam_number=? 
+2017-03-11 15:01:27  [ main:1334 ] - [ DEBUG ]  ==> Parameters: AKKKK(String), 56(Integer), d7a952f3201703102103289(String)
+2017-03-11 15:02:55  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sat Mar 11 15:02:55 CST 2017]; root of context hierarchy
+2017-03-11 15:02:55  [ main:40 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-11 15:02:56  [ main:424 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-11 15:02:57  [ main:1329 ] - [ DEBUG ]  ==>  Preparing: update engage_exam set register=? limite_time=? WHERE exam_number=? 
+2017-03-11 15:02:57  [ main:1352 ] - [ DEBUG ]  ==> Parameters: AKKKK(String), 56(Integer), d7a952f3201703102103289(String)
+2017-03-11 15:04:09  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1192d32: startup date [Sat Mar 11 15:04:09 CST 2017]; root of context hierarchy
+2017-03-11 15:04:09  [ main:35 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-11 15:04:09  [ main:397 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2017-03-11 15:04:10  [ main:1304 ] - [ DEBUG ]  ==>  Preparing: update engage_exam set register=?, limite_time=? WHERE exam_number=? 
+2017-03-11 15:04:10  [ main:1327 ] - [ DEBUG ]  ==> Parameters: AKKKK(String), 56(Integer), d7a952f3201703102103289(String)
+2017-03-11 15:04:10  [ main:1328 ] - [ DEBUG ]  <==    Updates: 1

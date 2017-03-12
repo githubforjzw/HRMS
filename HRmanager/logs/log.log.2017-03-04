@@ -1,0 +1,3 @@
+2017-03-04 08:56:09  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@12e76db: startup date [Sat Mar 04 08:56:09 CST 2017]; root of context hierarchy
+2017-03-04 08:56:09  [ main:39 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-03-04 08:56:10  [ main:402 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]

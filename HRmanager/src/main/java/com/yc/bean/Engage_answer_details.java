@@ -6,9 +6,9 @@ public class Engage_answer_details implements Serializable{
 
 	private static final long serialVersionUID = 8868524040946664541L;
 
-	private int and_id ;
+	private Integer and_id ;
 	private String answer_number  ;
-	private int subject_id ;
+	private Integer subject_id ;
 	private String answer;
 	
 	@Override
@@ -17,11 +17,11 @@ public class Engage_answer_details implements Serializable{
 				+ subject_id + ", answer=" + answer + "]";
 	}
 
-	public int getAnd_id() {
+	public Integer getAnd_id() {
 		return and_id;
 	}
 
-	public void setAnd_id(int and_id) {
+	public void setAnd_id(Integer and_id) {
 		this.and_id = and_id;
 	}
 
@@ -33,11 +33,11 @@ public class Engage_answer_details implements Serializable{
 		this.answer_number = answer_number;
 	}
 
-	public int getSubject_id() {
+	public Integer getSubject_id() {
 		return subject_id;
 	}
 
-	public void setSubject_id(int subject_id) {
+	public void setSubject_id(Integer subject_id) {
 		this.subject_id = subject_id;
 	}
 
@@ -47,6 +47,11 @@ public class Engage_answer_details implements Serializable{
 
 	public void setAnswer(String answer) {
 		this.answer = answer;
+	}
+
+
+	public Engage_answer_details() {
+		super();
 	}
 	
 	

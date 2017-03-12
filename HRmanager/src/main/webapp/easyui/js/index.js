@@ -6,20 +6,20 @@ $(function(){
 		closable: false
 	});
 	
-	$('#foods_menu').tree({
+	$('#recruitManage').tree({
 		onClick: function(node){
 			var id=node.id;
 			var title='主页';
 			var href='toFirst';
 			var tabObj=$('#index_content_info');
 			
-			if(id=="manager_foods"){
-				if(tabObj.tabs("exists","管理商品")){
-					tabObj.tabs("select","管理商品");
+			if(id=="position"){
+				if(tabObj.tabs("exists","职位发布管理")){
+					tabObj.tabs("select","职位发布管理");
 					return;
 				}else{
-					title="管理商品";
-					href="manager_foods.html";
+					title="职位发布管理";
+					href="toPosition";
 				}
 				
 			}else if(id=="login_info"){

@@ -57,6 +57,38 @@ $(function(){
 			});
 		}
 	});
+	
+	$('#recruitManage').tree({
+		onClick: function(node){
+			var id=node.id;
+			var title='主页';
+			var href='toFirst';
+			var tabObj=$('#index_content_info');
+			if(id=="SubjectsManager"){	
+				if(tabObj.tabs("exists","试题管理")){
+					tabObj.tabs("select","试题管理");
+					return;
+				}else{
+					title="试题管理";
+					href="toSubjectsManager";
+				}
+			}else if(id=="EngageExamManager"){
+				if(tabObj.tabs("exists","试卷管理")){
+					tabObj.tabs("select","试卷管理");
+					return;
+				}else{
+					title="试卷管理";
+					href="toEngageExamManager";
+				}
+			}
+			tabObj.tabs('add',{
+				title:title,
+				href:href,
+				fit:true,
+				closable:true
+			});
+		}
+	});
 
 })
 

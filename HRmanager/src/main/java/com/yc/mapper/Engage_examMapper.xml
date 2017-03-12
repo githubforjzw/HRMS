@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yc.mapper.EngageExamMapper">
+<mapper namespace="com.yc.mapper.Engage_examMapper">
 	<cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true"></cache>
 	<insert id="addSubject" parameterType="Engage_subjects" useGeneratedKeys="true" keyProperty="sub_id">
 		insert into engage_subjects(first_kind_id,first_kind_name,second_kind_id,second_kind_name,
@@ -154,7 +154,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteEngageExam" parameterType="Engage_exam">
 		delete from engage_exam where exam_number=#{exam_number}
 	</delete>
-	<select id="selectEngageExam" parameterType="Engage_exam">
+	<select id="selectEngageExam" parameterType="Engage_exam" resultMap="EngageExam">
 		select * from engage_exam
 		<trim prefix="where" suffixOverrides="and">
 			<if test="exam_number!=null">
@@ -162,6 +162,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			</if>
 			<if test="config_major.config_major_kind.major_kind_id!=null">
 				major_kind_id=#{config_major.config_major_kind.major_kind_id}
+			</if>
+			<if test="config_major.config_major_kind.major_kind_name!=null">
+				major_kind_name=#{config_major.config_major_kind.major_kind_name}
 			</if>
 			<if test="config_major.major_id!=null">
 				major_id=#{config_major.major_id}
@@ -180,6 +183,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			</if>
 		</trim>
 	</select>
+	<resultMap id="EngageExam" type="Engage_exam">
+		<id property="exa_id" column="exa_id"></id>
+		<result property="exam_number" column="exam_number" />
+		<result property="register" column="register" />
+		<result property="regist_time" column="regist_time" />
+		<result property="limite_time" column="limite_time" />
+		<association property="config_major" javaType="Config_major">
+			<id property="mak_id" column="mak_id" />
+			<result property="major_id" column="major_id" />
+			<result property="major_name" column="major_name" />
+			<association property="config_major_kind" javaType="Config_major_kind">
+				<id property="mfk_id" column="mfk_id"></id>
+				<result property="major_kind_id" column="major_kind_id"></result>
+				<result property="major_kind_name" column="major_kind_name"></result>
+			</association>
+		</association>
+		
+	</resultMap>
 	<!-- 插入、更新、删除、查询试卷详细信息  删除试卷的时候必须删除试卷登记及其详细信息-->
 	<insert id="addEngageExamDetails" parameterType="Engage_exam_details" useGeneratedKeys="true" keyProperty="exd_id">
 		isnert into engage_exam_details(exam_number,first_kind_id,first_kind_name,second_kind_id,second_kind_name,question_amount) values(

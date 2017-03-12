@@ -145,6 +145,4 @@ public class EngageExamBizImpl implements EngageExamBiz {
 		return this.baseDao.findAll(engage_exam, "selectEngageExam");
 	}
 
-	
-
 }

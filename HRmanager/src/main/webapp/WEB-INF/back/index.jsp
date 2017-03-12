@@ -76,8 +76,16 @@
 					<li><span>职位发布管理</span></li>
 					<li><span>简历管理</span></li>
 					<li><span>面试管理</span></li>
-					<li><span>招聘考试题库管理</span></li>
-					<li><span>招聘考试管理</span></li>
+					<li><span>招聘考试题库管理</span>
+						<ul id="engage" class="easyui-tree">
+							<li id="SubjectsManager"><span>试题管理</span></li>
+						</ul>
+					</li>
+					<li><span>招聘考试管理</span>
+						<ul id="engage_exam" class="easyui-tree">
+							<li id="EngageExamManager"><span>试卷管理</span></li>
+						</ul>
+					</li>
 					<li><span>录用管理</span></li>
 				</ul>
 			</div>
